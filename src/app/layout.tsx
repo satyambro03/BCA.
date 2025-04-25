@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { ThemeProvider } from '@/components/theme-provider';
 import { ThemeToggle } from '@/components/theme-toggle'; // Import ThemeToggle
 import { Instagram, Mail, Phone } from 'lucide-react'; // Removed Linkedin and Twitter import
+import { Toaster } from "@/components/ui/toaster"; // Import Toaster
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -39,7 +40,8 @@ export default function RootLayout({
           <header className="bg-primary text-primary-foreground py-4 shadow-md">
             <div className="container mx-auto">
               <nav className="flex items-center justify-between">
-                <Link href="/" className="text-primary-foreground text-lg font-bold transition duration-300 hover:opacity-80"> {/* Use primary-foreground */}
+                {/* Added ml-4 to move the link slightly to the right */}
+                <Link href="/" className="text-primary-foreground text-lg font-bold transition duration-300 hover:opacity-80 ml-4"> {/* Use primary-foreground */}
                   BCA {/* Updated site name */}
                 </Link>
                 <div className="flex items-center space-x-6"> {/* Container for nav items and toggle */}
@@ -161,6 +163,8 @@ export default function RootLayout({
               </a>
             </div>
           </footer>
+           {/* Add Toaster component here */}
+           <Toaster />
         </ThemeProvider>
       </body>
     </html>
