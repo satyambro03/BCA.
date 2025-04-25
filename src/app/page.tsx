@@ -39,7 +39,13 @@ const HomePage: React.FC = () => {
             <CardDescription>Download previous exam papers for practice.</CardDescription>
           </CardHeader>
           <CardContent>
-            <Link href="/question-papers" className="text-teal-accent hover:underline">
+             {/* Updated Link: Pointing to external site and opening in new tab */}
+            <Link
+              href="https://www.bca-ycmou.com/question_papers.html"
+              className="text-teal-accent hover:underline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               View Question Papers
             </Link>
           </CardContent>

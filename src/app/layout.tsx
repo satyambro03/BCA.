@@ -54,7 +54,13 @@ export default function RootLayout({
                       </Link>
                     </li>
                     <li>
-                      <Link href="/question-papers" className="text-white hover:text-gray-200">
+                      {/* Updated Link: Pointing to external site and opening in new tab */}
+                      <Link
+                        href="https://www.bca-ycmou.com/question_papers.html"
+                        className="text-white hover:text-gray-200"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         Question Papers
                       </Link>
                     </li>
