@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import {Card, CardContent, CardDescription, CardHeader, CardTitle} from '@/components/ui/card';
-import { BookOpen, FileText, FlaskConical, GraduationCap } from 'lucide-react'; // Added icons
+import { BookOpen, FileText, FlaskConical, Info } from 'lucide-react'; // Added Info icon for About
 
 const HomePage: React.FC = () => {
   return (
@@ -81,72 +81,12 @@ const HomePage: React.FC = () => {
           </CardContent>
         </Card>
 
-        {/* FYBCA Section Card */}
-        <Card className="transition duration-300 ease-in-out hover:scale-105 hover:shadow-xl hover:border-accent hover:shadow-accent/20">
-          <CardHeader>
-             <div className="flex items-center justify-center mb-2 text-primary">
-                <GraduationCap size={32} />
-             </div>
-            <CardTitle className="text-center">FYBCA</CardTitle>
-            <CardDescription className="text-center">Resources for First Year BCA students.</CardDescription>
-          </CardHeader>
-          <CardContent className="text-center">
-            {/* Updated Link: Pointing to external YCMOU notes */}
-            <Link
-              href="https://www.bca-ycmou.com/notes.html"
-              className="text-accent hover:underline font-medium"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Explore FYBCA Resources
-            </Link>
-          </CardContent>
-        </Card>
-
-        {/* SYBCA Section Card */}
-        <Card className="transition duration-300 ease-in-out hover:scale-105 hover:shadow-xl hover:border-accent hover:shadow-accent/20">
-          <CardHeader>
-             <div className="flex items-center justify-center mb-2 text-primary">
-                 <GraduationCap size={32} />
-             </div>
-            <CardTitle className="text-center">SYBCA</CardTitle>
-            <CardDescription className="text-center">Resources for Second Year BCA students.</CardDescription>
-          </CardHeader>
-          <CardContent className="text-center">
-            {/* Updated Link: Pointing to external YCMOU notes */}
-            <Link
-              href="https://www.bca-ycmou.com/notes.html"
-              className="text-accent hover:underline font-medium"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Explore SYBCA Resources
-            </Link>
-          </CardContent>
-        </Card>
-
-        {/* TYBCA Section Card */}
-        <Card className="transition duration-300 ease-in-out hover:scale-105 hover:shadow-xl hover:border-accent hover:shadow-accent/20">
-          <CardHeader>
-             <div className="flex items-center justify-center mb-2 text-primary">
-                 <GraduationCap size={32} />
-             </div>
-            <CardTitle className="text-center">TYBCA</CardTitle>
-            <CardDescription className="text-center">Resources for Third Year BCA students.</CardDescription>
-          </CardHeader>
-          <CardContent className="text-center">
-            {/* Placeholder or link to relevant section */}
-             <span className="text-muted-foreground italic">Coming Soon</span>
-            {/* Example Link (if available):
-            <Link href="/tybca" className="text-accent hover:underline font-medium">
-              Explore TYBCA Resources
-            </Link> */}
-          </CardContent>
-        </Card>
-
-        {/* About Section Card - Kept for completeness */}
+        {/* About Section Card - Spans across columns */}
         <Card className="transition duration-300 ease-in-out hover:scale-105 hover:shadow-xl hover:border-accent hover:shadow-accent/20 md:col-span-2 lg:col-span-3">
-          <CardHeader>
+           <CardHeader>
+             <div className="flex items-center justify-center mb-2 text-primary">
+                <Info size={32} /> {/* Changed icon */}
+             </div>
             <CardTitle className="text-center">About</CardTitle>
             <CardDescription className="text-center">Learn more about this resource hub.</CardDescription>
           </CardHeader>
