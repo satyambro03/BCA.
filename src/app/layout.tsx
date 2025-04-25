@@ -4,6 +4,7 @@ import './globals.css';
 import Link from 'next/link';
 import { ThemeProvider } from '@/components/theme-provider';
 import { ThemeToggle } from '@/components/theme-toggle'; // Import ThemeToggle
+import { Linkedin, Instagram, Twitter } from 'lucide-react'; // Import social icons
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -102,10 +103,41 @@ export default function RootLayout({
           </header>
           <main className="flex-grow container mx-auto py-8">{children}</main> {/* Added container and padding */}
           {/* Footer uses secondary background and foreground */}
-          <footer className="mt-auto text-center py-4 bg-secondary text-secondary-foreground"> {/* Added mt-auto for sticky footer */}
-            <p>
+          <footer className="mt-auto text-center py-6 bg-secondary text-secondary-foreground"> {/* Added mt-auto for sticky footer, increased padding */}
+            <p className="mb-4"> {/* Added margin-bottom to copyright */}
               &copy; 2025 BCA. All rights reserved. | By Satyam Vishwakarma ( S . R )
             </p>
+            {/* Social Media Links */}
+            <div className="flex justify-center space-x-4">
+              <a
+                href="https://www.linkedin.com/in/satyam-vishwakarma-991438300/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn Profile"
+                className="text-secondary-foreground hover:text-primary transition duration-300"
+              >
+                <Linkedin size={24} />
+              </a>
+              <a
+                href="https://www.instagram.com/satyam_vishwakarma_18"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram Profile"
+                className="text-secondary-foreground hover:text-primary transition duration-300"
+              >
+                <Instagram size={24} />
+              </a>
+              <a
+                href="https://x.com/satyambro333"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="X (formerly Twitter) Profile"
+                className="text-secondary-foreground hover:text-primary transition duration-300"
+              >
+                {/* Using Twitter icon for X.com as it's common practice */}
+                <Twitter size={24} />
+              </a>
+            </div>
           </footer>
         </ThemeProvider>
       </body>
