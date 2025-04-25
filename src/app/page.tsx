@@ -20,7 +20,13 @@ const HomePage: React.FC = () => {
             <CardDescription>Access study notes for various subjects.</CardDescription>
           </CardHeader>
           <CardContent>
-            <Link href="/notes" className="text-teal-accent hover:underline">
+            {/* Updated Link: Pointing to external site and opening in new tab */}
+            <Link
+              href="https://www.bca-ycmou.com/notes.html"
+              className="text-teal-accent hover:underline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               View Notes
             </Link>
           </CardContent>

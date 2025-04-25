@@ -43,7 +43,13 @@ export default function RootLayout({
                 <div className="flex items-center space-x-6"> {/* Container for nav items and toggle */}
                   <ul className="flex space-x-6">
                     <li>
-                      <Link href="/notes" className="text-white hover:text-gray-200">
+                      {/* Updated Link: Pointing to external site and opening in new tab */}
+                      <Link
+                        href="https://www.bca-ycmou.com/notes.html"
+                        className="text-white hover:text-gray-200"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                       >
                         Notes
                       </Link>
                     </li>
