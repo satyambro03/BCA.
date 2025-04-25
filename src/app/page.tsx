@@ -7,7 +7,7 @@ const HomePage: React.FC = () => {
     <div className="container mx-auto py-12">
       {/* Hero Section */}
       <section className="text-center mb-16">
-        <h1 className="text-4xl font-bold mb-4">Welcome to OLYE BCA</h1> {/* Updated heading */}
+        <h1 className="text-4xl font-bold mb-4">Welcome to BCA</h1> {/* Updated heading */}
         <p className="text-lg text-muted-foreground">Your go-to resource for quality education materials.</p>
       </section>
 
@@ -73,7 +73,7 @@ const HomePage: React.FC = () => {
         <Card>
           <CardHeader>
             <CardTitle>About</CardTitle>
-            <CardDescription>Learn more about OLYE BCA</CardDescription> {/* Updated description */}
+            <CardDescription>Learn more about BCA</CardDescription> {/* Updated description */}
           </CardHeader>
           <CardContent>
             <Link href="/about" className="text-teal-accent hover:underline">
