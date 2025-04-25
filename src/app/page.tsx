@@ -8,7 +8,7 @@ const HomePage: React.FC = () => {
       {/* Hero Section */}
       <section className="text-center mb-16">
         <h1 className="text-4xl font-bold mb-4">Welcome to BCA</h1> {/* Updated heading */}
-        <p className="text-lg text-muted-foreground">Your go-to resource for quality education materials.</p>
+        <p className="text-lg text-muted-foreground">resource for quality education materials.</p> {/* Updated description */}
       </section>
 
       {/* Features Section */}

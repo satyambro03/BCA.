@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "BCA", // Updated title
-  description: 'Your go-to resource for quality education materials.',
+  description: 'resource for quality education materials.', // Updated description
 };
 
 export default function RootLayout({
