@@ -66,7 +66,8 @@ body {
     --popover-foreground: 210 17% 98%;
     /* Lighter blue for dark mode primary */
     --primary: 211 100% 60%;
-    --primary-foreground: 210 10% 15%; /* Dark text on light blue */
+    /* Use light text on the lighter blue primary background */
+    --primary-foreground: 210 17% 98%;
     /* Dark secondary */
     --secondary: 210 10% 25%;
     --secondary-foreground: 210 17% 95%;
@@ -75,6 +76,7 @@ body {
     --muted-foreground: 210 17% 70%;
     /* Dark accent matches primary */
     --accent: 211 100% 60%;
+    /* Use dark text on the light blue accent */
     --accent-foreground: 210 10% 15%;
     /* Default destructive */
     --destructive: 0 62.8% 30.6%;
