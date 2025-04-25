@@ -77,6 +77,11 @@ export default function RootLayout({
                         Practicals
                       </Link>
                     </li>
+                     <li>
+                      <Link href="#" className="text-white hover:text-gray-200 transition duration-300 hover:scale-110 inline-block"> {/* Added E-Books link */}
+                        E-Books
+                      </Link>
+                    </li>
                     <li>
                       <Link href="/about" className="text-white hover:text-gray-200 transition duration-300 hover:scale-110 inline-block"> {/* Added animation */}
                         About

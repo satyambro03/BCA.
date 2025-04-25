@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import {Card, CardContent, CardDescription, CardHeader, CardTitle} from '@/components/ui/card';
-import { BookOpen, FileText, FlaskConical, Info } from 'lucide-react'; // Added Info icon for About
+import { BookOpen, FileText, FlaskConical, Info, Book } from 'lucide-react'; // Added Book icon for E-Books
 
 const HomePage: React.FC = () => {
   return (
@@ -15,7 +15,7 @@ const HomePage: React.FC = () => {
       </section>
 
       {/* Features Section */}
-      <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"> {/* Updated grid columns to 4 for E-Books */}
         {/* Notes Section Card - Added transition and hover effects with accent border/shadow */}
         <Card className="transition duration-300 ease-in-out hover:scale-105 hover:shadow-xl hover:border-accent hover:shadow-accent/20">
           <CardHeader>
@@ -81,9 +81,28 @@ const HomePage: React.FC = () => {
           </CardContent>
         </Card>
 
+        {/* E-Books Section Card - Added transition and hover effects */}
+        <Card className="transition duration-300 ease-in-out hover:scale-105 hover:shadow-xl hover:border-accent hover:shadow-accent/20">
+          <CardHeader>
+            <div className="flex items-center justify-center mb-2 text-primary">
+              <Book size={32} /> {/* E-Books Icon */}
+            </div>
+            <CardTitle className="text-center">E-Books</CardTitle>
+            <CardDescription className="text-center">Find digital textbooks and reference materials.</CardDescription>
+          </CardHeader>
+          <CardContent className="text-center">
+            <Link
+              href="#" // Placeholder link for E-Books
+              className="text-accent hover:underline font-medium" // Use theme accent color
+            >
+              View E-Books
+            </Link>
+          </CardContent>
+        </Card>
+
         {/* About Section Card - Spans across columns */}
-        {/* Adjusted col-span for potentially better layout consistency */}
-        <Card className="transition duration-300 ease-in-out hover:scale-105 hover:shadow-xl hover:border-accent hover:shadow-accent/20 col-span-1 md:col-span-2 lg:col-span-3">
+        {/* Adjusted col-span to span all 4 columns */}
+        <Card className="transition duration-300 ease-in-out hover:scale-105 hover:shadow-xl hover:border-accent hover:shadow-accent/20 col-span-1 md:col-span-2 lg:col-span-4">
            <CardHeader>
              <div className="flex items-center justify-center mb-2 text-primary">
                 <Info size={32} /> {/* Changed icon */}

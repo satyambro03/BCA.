@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { BookOpenText, FileText, Lightbulb } from 'lucide-react'; // Import relevant icons
+import { BookOpenText, FileText, Lightbulb, Book } from 'lucide-react'; // Import relevant icons, added Book
 
 const AboutPage: React.FC = () => {
   return (
@@ -13,7 +13,7 @@ const AboutPage: React.FC = () => {
         </p>
       </section>
 
-      <section className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+      <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12"> {/* Updated grid columns to 4 */}
         <Card className="text-center transition duration-300 ease-in-out hover:shadow-lg">
           <CardHeader>
             <div className="flex justify-center mb-4">
@@ -53,12 +53,26 @@ const AboutPage: React.FC = () => {
             </p>
           </CardContent>
         </Card>
+        {/* E-Books Card */}
+        <Card className="text-center transition duration-300 ease-in-out hover:shadow-lg">
+          <CardHeader>
+            <div className="flex justify-center mb-4">
+              <Book className="h-12 w-12 text-primary" /> {/* E-Books Icon */}
+            </div>
+            <CardTitle>E-Books Collection</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p className="text-muted-foreground">
+              Explore a collection of digital textbooks and reference materials to supplement your learning and deepen your understanding of key subjects.
+            </p>
+          </CardContent>
+        </Card>
       </section>
 
       <section className="text-center">
         <h2 className="text-2xl font-semibold mb-4 text-secondary-foreground">Our Mission</h2>
         <p className="text-muted-foreground max-w-3xl mx-auto">
-          Our mission is to provide BCA students with easy access to high-quality educational resources. We aim to simplify the learning process by consolidating notes, question papers, and practical materials in one convenient location. This platform is created and maintained by Satyam Vishwakarma (S.R) with the goal of supporting fellow students in their academic journey.
+          Our mission is to provide BCA students with easy access to high-quality educational resources. We aim to simplify the learning process by consolidating notes, question papers, practical materials, and e-books in one convenient location. This platform is created and maintained by Satyam Vishwakarma (S.R) with the goal of supporting fellow students in their academic journey.
         </p>
       </section>
     </div>
