@@ -66,8 +66,8 @@ body {
     --popover-foreground: 210 17% 98%;
     /* Lighter blue for dark mode primary */
     --primary: 211 100% 60%;
-    /* Use dark text on the lighter blue primary background for better contrast */
-    --primary-foreground: 210 10% 15%; /* Changed from 210 17% 98% */
+    /* Revert primary-foreground to white for better contrast on the lighter blue background in dark mode */
+    --primary-foreground: 0 0% 100%; /* Was 210 10% 15% */
     /* Dark secondary */
     --secondary: 210 10% 25%;
     --secondary-foreground: 210 17% 95%;
