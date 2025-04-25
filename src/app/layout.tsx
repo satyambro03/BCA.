@@ -78,7 +78,12 @@ export default function RootLayout({
                       </Link>
                     </li>
                      <li>
-                      <Link href="#" className="text-white hover:text-gray-200 transition duration-300 hover:scale-110 inline-block"> {/* Added E-Books link */}
+                      <Link
+                        href="https://www.bca-ycmou.com/books.html" // Updated E-Books link
+                        className="text-white hover:text-gray-200 transition duration-300 hover:scale-110 inline-block"
+                        target="_blank" // Open in new tab
+                        rel="noopener noreferrer" // Security measure for new tabs
+                      >
                         E-Books
                       </Link>
                     </li>

@@ -92,8 +92,10 @@ const HomePage: React.FC = () => {
           </CardHeader>
           <CardContent className="text-center">
             <Link
-              href="#" // Placeholder link for E-Books
+              href="https://www.bca-ycmou.com/books.html" // Updated E-Books link
               className="text-accent hover:underline font-medium" // Use theme accent color
+              target="_blank" // Open in new tab
+              rel="noopener noreferrer" // Security measure for new tabs
             >
               View E-Books
             </Link>
