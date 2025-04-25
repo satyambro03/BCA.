@@ -86,7 +86,7 @@ export default function RootLayout({
           <main>{children}</main>
           <footer className="mt-12 text-center py-4">
             <p>
-              &copy; {new Date().getFullYear()} BCA. All rights reserved. | By Satyam Vishwakarma
+              &copy; 2025 BCA. All rights reserved. | By Satyam Vishwakarma ( S . R )
             </p>
           </footer>
         </ThemeProvider>
