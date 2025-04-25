@@ -91,12 +91,15 @@ const HomePage: React.FC = () => {
             <CardDescription className="text-center">Resources for First Year BCA students.</CardDescription>
           </CardHeader>
           <CardContent className="text-center">
-            {/* Placeholder or link to relevant section */}
-            <span className="text-muted-foreground italic">Coming Soon</span>
-            {/* Example Link (if available):
-            <Link href="/fybca" className="text-accent hover:underline font-medium">
+            {/* Updated Link: Pointing to external YCMOU notes */}
+            <Link
+              href="https://www.bca-ycmou.com/notes.html"
+              className="text-accent hover:underline font-medium"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Explore FYBCA Resources
-            </Link> */}
+            </Link>
           </CardContent>
         </Card>
 
