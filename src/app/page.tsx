@@ -82,7 +82,8 @@ const HomePage: React.FC = () => {
         </Card>
 
         {/* About Section Card - Spans across columns */}
-        <Card className="transition duration-300 ease-in-out hover:scale-105 hover:shadow-xl hover:border-accent hover:shadow-accent/20 md:col-span-2 lg:col-span-3">
+        {/* Adjusted col-span for potentially better layout consistency */}
+        <Card className="transition duration-300 ease-in-out hover:scale-105 hover:shadow-xl hover:border-accent hover:shadow-accent/20 col-span-1 md:col-span-2 lg:col-span-3">
            <CardHeader>
              <div className="flex items-center justify-center mb-2 text-primary">
                 <Info size={32} /> {/* Changed icon */}
