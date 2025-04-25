@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Satyam's Edu Site",
+  title: "BCA KA DO", // Updated title
   description: 'Your go-to resource for quality education materials.',
 };
 
@@ -38,7 +38,7 @@ export default function RootLayout({
             <div className="container mx-auto">
               <nav className="flex items-center justify-between">
                 <Link href="/" className="text-white text-lg font-bold">
-                  Satyam's Edu Site
+                  BCA KA DO {/* Updated site name */}
                 </Link>
                 <div className="flex items-center space-x-6"> {/* Container for nav items and toggle */}
                   <ul className="flex space-x-6">
@@ -86,7 +86,7 @@ export default function RootLayout({
           <main>{children}</main>
           <footer className="mt-12 text-center py-4">
             <p>
-              &copy; {new Date().getFullYear()} Satyam's Edu Site. All rights reserved. | By Satyam Vishwakarma
+              &copy; {new Date().getFullYear()} BCA KA DO. All rights reserved. | By Satyam Vishwakarma
             </p>
           </footer>
         </ThemeProvider>
