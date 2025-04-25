@@ -43,7 +43,6 @@ export default function RootLayout({
                 <div className="flex items-center space-x-6"> {/* Container for nav items and toggle */}
                   <ul className="flex space-x-6">
                     <li>
-                      {/* Updated Link: Pointing to external site and opening in new tab */}
                       <Link
                         href="https://www.bca-ycmou.com/notes.html"
                         className="text-white hover:text-gray-200"
@@ -54,7 +53,6 @@ export default function RootLayout({
                       </Link>
                     </li>
                     <li>
-                      {/* Updated Link: Pointing to external site and opening in new tab */}
                       <Link
                         href="https://www.bca-ycmou.com/question_papers.html"
                         className="text-white hover:text-gray-200"
@@ -62,6 +60,16 @@ export default function RootLayout({
                         rel="noopener noreferrer"
                       >
                         Question Papers
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="https://www.bca-ycmou.com/practicals.html"
+                        className="text-white hover:text-gray-200"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Practicals
                       </Link>
                     </li>
                     <li>

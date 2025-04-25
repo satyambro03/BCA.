@@ -51,7 +51,25 @@ const HomePage: React.FC = () => {
           </CardContent>
         </Card>
 
-        {/* Add more cards for other resources as needed */}
+        {/* Practicals Section Card */}
+        <Card>
+          <CardHeader>
+            <CardTitle>Practicals</CardTitle>
+            <CardDescription>Find practical session materials and guides.</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <Link
+              href="https://www.bca-ycmou.com/practicals.html"
+              className="text-teal-accent hover:underline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View Practicals
+            </Link>
+          </CardContent>
+        </Card>
+
+        {/* About Section Card */}
         <Card>
           <CardHeader>
             <CardTitle>About</CardTitle>
@@ -63,6 +81,9 @@ const HomePage: React.FC = () => {
             </Link>
           </CardContent>
         </Card>
+
+        {/* Add more cards for other resources as needed */}
+
       </section>
 
       {/* Attribution moved to layout */}
