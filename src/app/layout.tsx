@@ -43,6 +43,11 @@ export default function RootLayout({
                 <div className="flex items-center space-x-6"> {/* Container for nav items and toggle */}
                   <ul className="flex space-x-6">
                     <li>
+                      <Link href="/" className="text-white hover:text-gray-200 transition duration-300 hover:scale-110 inline-block"> {/* Added animation */}
+                        Home
+                      </Link>
+                    </li>
+                    <li>
                       <Link
                         href="https://www.bca-ycmou.com/notes.html"
                         className="text-white hover:text-gray-200 transition duration-300 hover:scale-110 inline-block" // Added animation
