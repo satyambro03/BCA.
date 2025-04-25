@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Link from 'next/link';
 import {Card, CardContent, CardDescription, CardHeader, CardTitle} from '@/components/ui/card';
@@ -15,8 +16,8 @@ const HomePage: React.FC = () => {
         <p className="text-lg text-muted-foreground">resource for quality education materials.</p>
       </section>
 
-      {/* Features Section */}
-      <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8"> {/* Updated grid to 5 columns */}
+      {/* Features Section - Adjusted grid layout */}
+      <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"> {/* Changed lg to grid-cols-3 */}
         {/* Notes Section Card */}
         <Card className="transition duration-300 ease-in-out hover:scale-105 hover:shadow-xl hover:border-accent hover:shadow-accent/20">
           <CardHeader>
@@ -101,7 +102,7 @@ const HomePage: React.FC = () => {
           </CardContent>
         </Card>
 
-         {/* Contact Section Card - Added */}
+         {/* Contact Section Card */}
          <Card className="transition duration-300 ease-in-out hover:scale-105 hover:shadow-xl hover:border-accent hover:shadow-accent/20">
           <CardHeader>
             <div className="flex items-center justify-center mb-2 text-primary">
@@ -118,9 +119,8 @@ const HomePage: React.FC = () => {
         </Card>
 
 
-        {/* About Section Card - Spans across columns */}
-        {/* Adjusted col-span to span all 5 columns */}
-        <Card className="transition duration-300 ease-in-out hover:scale-105 hover:shadow-xl hover:border-accent hover:shadow-accent/20 col-span-1 md:col-span-2 lg:col-span-5">
+        {/* About Section Card - No longer spanning columns */}
+        <Card className="transition duration-300 ease-in-out hover:scale-105 hover:shadow-xl hover:border-accent hover:shadow-accent/20 col-span-1"> {/* Changed col-span to 1 */}
            <CardHeader>
              {/* Use primary theme color for icon */}
              <div className="flex items-center justify-center mb-2 text-primary">
@@ -145,5 +145,3 @@ const HomePage: React.FC = () => {
 };
 
 export default HomePage;
-
-    
