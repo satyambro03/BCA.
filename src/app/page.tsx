@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import {Card, CardContent, CardDescription, CardHeader, CardTitle} from '@/components/ui/card';
-import { BookOpen, FileText, FlaskConical, Info, Book } from 'lucide-react'; // Added Book icon for E-Books
+import { BookOpen, FileText, FlaskConical, Info, Book, Mail } from 'lucide-react'; // Added Book and Mail icons
 
 const HomePage: React.FC = () => {
   return (
@@ -16,11 +16,10 @@ const HomePage: React.FC = () => {
       </section>
 
       {/* Features Section */}
-      <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        {/* Notes Section Card - Added transition and hover effects with accent border/shadow */}
+      <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8"> {/* Updated grid to 5 columns */}
+        {/* Notes Section Card */}
         <Card className="transition duration-300 ease-in-out hover:scale-105 hover:shadow-xl hover:border-accent hover:shadow-accent/20">
           <CardHeader>
-            {/* Use primary theme color for icon */}
             <div className="flex items-center justify-center mb-2 text-primary">
                 <BookOpen size={32} />
             </div>
@@ -28,10 +27,8 @@ const HomePage: React.FC = () => {
             <CardDescription className="text-center">Access study notes for various subjects.</CardDescription>
           </CardHeader>
           <CardContent className="text-center">
-            {/* Updated Link: Pointing to external site and opening in new tab */}
             <Link
               href="https://www.bca-ycmou.com/notes.html"
-               // Use accent theme color for link
               className="text-accent hover:underline font-medium"
               target="_blank"
               rel="noopener noreferrer"
@@ -41,10 +38,9 @@ const HomePage: React.FC = () => {
           </CardContent>
         </Card>
 
-        {/* Question Papers Archive Card - Added transition and hover effects with accent border/shadow */}
+        {/* Question Papers Archive Card */}
         <Card className="transition duration-300 ease-in-out hover:scale-105 hover:shadow-xl hover:border-accent hover:shadow-accent/20">
           <CardHeader>
-             {/* Use primary theme color for icon */}
              <div className="flex items-center justify-center mb-2 text-primary">
                 <FileText size={32} />
              </div>
@@ -52,10 +48,8 @@ const HomePage: React.FC = () => {
             <CardDescription className="text-center">Download previous exam papers for practice.</CardDescription>
           </CardHeader>
           <CardContent className="text-center">
-             {/* Updated Link: Pointing to external site and opening in new tab */}
             <Link
               href="https://www.bca-ycmou.com/question_papers.html"
-              // Use accent theme color for link
               className="text-accent hover:underline font-medium"
               target="_blank"
               rel="noopener noreferrer"
@@ -65,10 +59,9 @@ const HomePage: React.FC = () => {
           </CardContent>
         </Card>
 
-        {/* Practicals Section Card - Added transition and hover effects with accent border/shadow */}
+        {/* Practicals Section Card */}
         <Card className="transition duration-300 ease-in-out hover:scale-105 hover:shadow-xl hover:border-accent hover:shadow-accent/20">
           <CardHeader>
-             {/* Use primary theme color for icon */}
              <div className="flex items-center justify-center mb-2 text-primary">
                 <FlaskConical size={32} />
              </div>
@@ -78,7 +71,6 @@ const HomePage: React.FC = () => {
           <CardContent className="text-center">
             <Link
               href="https://www.bca-ycmou.com/practicals.html"
-              // Use accent theme color for link
               className="text-accent hover:underline font-medium"
               target="_blank"
               rel="noopener noreferrer"
@@ -88,10 +80,9 @@ const HomePage: React.FC = () => {
           </CardContent>
         </Card>
 
-        {/* E-Books Section Card - Added transition and hover effects */}
+        {/* E-Books Section Card */}
         <Card className="transition duration-300 ease-in-out hover:scale-105 hover:shadow-xl hover:border-accent hover:shadow-accent/20">
           <CardHeader>
-            {/* Use primary theme color for icon */}
             <div className="flex items-center justify-center mb-2 text-primary">
               <Book size={32} /> {/* E-Books Icon */}
             </div>
@@ -101,7 +92,6 @@ const HomePage: React.FC = () => {
           <CardContent className="text-center">
             <Link
               href="https://www.bca-ycmou.com/books.html" // Updated E-Books link
-              // Use accent theme color for link
               className="text-accent hover:underline font-medium"
               target="_blank" // Open in new tab
               rel="noopener noreferrer" // Security measure for new tabs
@@ -111,9 +101,26 @@ const HomePage: React.FC = () => {
           </CardContent>
         </Card>
 
+         {/* Contact Section Card - Added */}
+         <Card className="transition duration-300 ease-in-out hover:scale-105 hover:shadow-xl hover:border-accent hover:shadow-accent/20">
+          <CardHeader>
+            <div className="flex items-center justify-center mb-2 text-primary">
+              <Mail size={32} /> {/* Contact Icon */}
+            </div>
+            <CardTitle className="text-center">Contact</CardTitle>
+            <CardDescription className="text-center">Get in touch with us for queries or feedback.</CardDescription>
+          </CardHeader>
+          <CardContent className="text-center">
+            <Link href="/contact" className="text-accent hover:underline font-medium">
+              Contact Us
+            </Link>
+          </CardContent>
+        </Card>
+
+
         {/* About Section Card - Spans across columns */}
-        {/* Adjusted col-span to span all 4 columns */}
-        <Card className="transition duration-300 ease-in-out hover:scale-105 hover:shadow-xl hover:border-accent hover:shadow-accent/20 col-span-1 md:col-span-2 lg:col-span-4">
+        {/* Adjusted col-span to span all 5 columns */}
+        <Card className="transition duration-300 ease-in-out hover:scale-105 hover:shadow-xl hover:border-accent hover:shadow-accent/20 col-span-1 md:col-span-2 lg:col-span-5">
            <CardHeader>
              {/* Use primary theme color for icon */}
              <div className="flex items-center justify-center mb-2 text-primary">
@@ -138,3 +145,5 @@ const HomePage: React.FC = () => {
 };
 
 export default HomePage;
+
+    

@@ -94,6 +94,11 @@ export default function RootLayout({
                         About
                       </Link>
                     </li>
+                    <li>
+                      <Link href="/contact" className="text-primary-foreground hover:opacity-80 transition duration-300 hover:scale-110 inline-block"> {/* Added Contact link */}
+                        Contact
+                      </Link>
+                    </li>
                   </ul>
                    {/* Adjusted ThemeToggle button style */}
                    <ThemeToggle />
@@ -160,3 +165,5 @@ export default function RootLayout({
     </html>
   );
 }
+
+    
