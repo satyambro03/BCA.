@@ -4,7 +4,7 @@ import './globals.css';
 import Link from 'next/link';
 import { ThemeProvider } from '@/components/theme-provider';
 import { ThemeToggle } from '@/components/theme-toggle'; // Import ThemeToggle
-import { Linkedin, Instagram, Twitter } from 'lucide-react'; // Import social icons
+import { Linkedin, Instagram, Twitter, Mail, Phone } from 'lucide-react'; // Import social and contact icons
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -107,6 +107,18 @@ export default function RootLayout({
             <p className="mb-4"> {/* Added margin-bottom to copyright */}
               &copy; 2025 BCA. All rights reserved. | By Satyam Vishwakarma ( S . R )
             </p>
+            {/* Contact Information */}
+            <div className="flex justify-center items-center space-x-4 mb-4 text-sm">
+              <a href="mailto:satyambro333@gmail.com" className="flex items-center text-secondary-foreground hover:text-primary transition duration-300">
+                <Mail size={18} className="mr-1" />
+                satyambro333@gmail.com
+              </a>
+              <span className="text-muted-foreground">|</span> {/* Separator */}
+              <a href="tel:+917039201803" className="flex items-center text-secondary-foreground hover:text-primary transition duration-300">
+                <Phone size={18} className="mr-1" />
+                +91 7039201803
+              </a>
+            </div>
             {/* Social Media Links */}
             <div className="flex justify-center space-x-4">
               <a
