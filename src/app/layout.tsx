@@ -27,30 +27,31 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen`}> {/* Added flex layout for footer */}
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
-          <header className="bg-primary-blue py-4 shadow-md"> {/* Added shadow */}
+          {/* Header uses primary background and foreground theme variables */}
+          <header className="bg-primary text-primary-foreground py-4 shadow-md">
             <div className="container mx-auto">
               <nav className="flex items-center justify-between">
-                <Link href="/" className="text-white text-lg font-bold transition duration-300 hover:opacity-80"> {/* Added hover transition */}
+                <Link href="/" className="text-primary-foreground text-lg font-bold transition duration-300 hover:opacity-80"> {/* Use primary-foreground */}
                   BCA {/* Updated site name */}
                 </Link>
                 <div className="flex items-center space-x-6"> {/* Container for nav items and toggle */}
                   <ul className="flex space-x-6">
                     <li>
-                      <Link href="/" className="text-white hover:text-gray-200 transition duration-300 hover:scale-110 inline-block"> {/* Added animation */}
+                      <Link href="/" className="text-primary-foreground hover:opacity-80 transition duration-300 hover:scale-110 inline-block"> {/* Use primary-foreground, adjusted hover */}
                         Home
                       </Link>
                     </li>
                     <li>
                       <Link
                         href="https://www.bca-ycmou.com/notes.html"
-                        className="text-white hover:text-gray-200 transition duration-300 hover:scale-110 inline-block" // Added animation
+                        className="text-primary-foreground hover:opacity-80 transition duration-300 hover:scale-110 inline-block" // Use primary-foreground, adjusted hover
                         target="_blank"
                         rel="noopener noreferrer"
                        >
@@ -60,7 +61,7 @@ export default function RootLayout({
                     <li>
                       <Link
                         href="https://www.bca-ycmou.com/question_papers.html"
-                        className="text-white hover:text-gray-200 transition duration-300 hover:scale-110 inline-block" // Added animation
+                        className="text-primary-foreground hover:opacity-80 transition duration-300 hover:scale-110 inline-block" // Use primary-foreground, adjusted hover
                         target="_blank"
                         rel="noopener noreferrer"
                       >
@@ -70,7 +71,7 @@ export default function RootLayout({
                     <li>
                       <Link
                         href="https://www.bca-ycmou.com/practicals.html"
-                        className="text-white hover:text-gray-200 transition duration-300 hover:scale-110 inline-block" // Added animation
+                        className="text-primary-foreground hover:opacity-80 transition duration-300 hover:scale-110 inline-block" // Use primary-foreground, adjusted hover
                         target="_blank"
                         rel="noopener noreferrer"
                       >
@@ -80,7 +81,7 @@ export default function RootLayout({
                      <li>
                       <Link
                         href="https://www.bca-ycmou.com/books.html" // Updated E-Books link
-                        className="text-white hover:text-gray-200 transition duration-300 hover:scale-110 inline-block"
+                        className="text-primary-foreground hover:opacity-80 transition duration-300 hover:scale-110 inline-block" // Use primary-foreground, adjusted hover
                         target="_blank" // Open in new tab
                         rel="noopener noreferrer" // Security measure for new tabs
                       >
@@ -88,18 +89,20 @@ export default function RootLayout({
                       </Link>
                     </li>
                     <li>
-                      <Link href="/about" className="text-white hover:text-gray-200 transition duration-300 hover:scale-110 inline-block"> {/* Added animation */}
+                      <Link href="/about" className="text-primary-foreground hover:opacity-80 transition duration-300 hover:scale-110 inline-block"> {/* Use primary-foreground, adjusted hover */}
                         About
                       </Link>
                     </li>
                   </ul>
-                  <ThemeToggle /> {/* Add the theme toggle button */}
+                   {/* Adjusted ThemeToggle button style */}
+                   <ThemeToggle />
                 </div>
               </nav>
             </div>
           </header>
-          <main className="flex-grow">{children}</main> {/* Ensure main content pushes footer */}
-          <footer className="mt-12 text-center py-4 bg-secondary text-secondary-foreground"> {/* Added background */}
+          <main className="flex-grow container mx-auto py-8">{children}</main> {/* Added container and padding */}
+          {/* Footer uses secondary background and foreground */}
+          <footer className="mt-auto text-center py-4 bg-secondary text-secondary-foreground"> {/* Added mt-auto for sticky footer */}
             <p>
               &copy; 2025 BCA. All rights reserved. | By Satyam Vishwakarma ( S . R )
             </p>
