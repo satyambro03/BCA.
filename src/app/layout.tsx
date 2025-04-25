@@ -4,7 +4,7 @@ import './globals.css';
 import Link from 'next/link';
 import { ThemeProvider } from '@/components/theme-provider';
 import { ThemeToggle } from '@/components/theme-toggle'; // Import ThemeToggle
-import { Linkedin, Instagram, Twitter, Mail, Phone } from 'lucide-react'; // Import social and contact icons
+import { Linkedin, Instagram, Mail, Phone } from 'lucide-react'; // Removed Twitter import
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -146,8 +146,12 @@ export default function RootLayout({
                 aria-label="X (formerly Twitter) Profile"
                 className="text-secondary-foreground hover:text-primary transition duration-300"
               >
-                {/* Using Twitter icon for X.com as it's common practice */}
-                <Twitter size={24} />
+                {/* Replaced lucide icon with inline SVG for X logo */}
+                <svg viewBox="0 0 24 24" aria-hidden="true" width="24" height="24" fill="currentColor">
+                    <g>
+                      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
+                    </g>
+                  </svg>
               </a>
             </div>
           </footer>
