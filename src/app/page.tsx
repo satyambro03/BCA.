@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import {Card, CardContent, CardDescription, CardHeader, CardTitle} from '@/components/ui/card';
+import { BookOpen, FileText, FlaskConical, GraduationCap } from 'lucide-react'; // Added icons
 
 const HomePage: React.FC = () => {
   return (
@@ -18,10 +19,13 @@ const HomePage: React.FC = () => {
         {/* Notes Section Card - Added transition and hover effects with accent border/shadow */}
         <Card className="transition duration-300 ease-in-out hover:scale-105 hover:shadow-xl hover:border-accent hover:shadow-accent/20">
           <CardHeader>
-            <CardTitle>Notes</CardTitle>
-            <CardDescription>Access study notes for various subjects.</CardDescription>
+            <div className="flex items-center justify-center mb-2 text-primary">
+                <BookOpen size={32} />
+            </div>
+            <CardTitle className="text-center">Notes</CardTitle>
+            <CardDescription className="text-center">Access study notes for various subjects.</CardDescription>
           </CardHeader>
-          <CardContent>
+          <CardContent className="text-center">
             {/* Updated Link: Pointing to external site and opening in new tab */}
             <Link
               href="https://www.bca-ycmou.com/notes.html"
@@ -37,10 +41,13 @@ const HomePage: React.FC = () => {
         {/* Question Papers Archive Card - Added transition and hover effects with accent border/shadow */}
         <Card className="transition duration-300 ease-in-out hover:scale-105 hover:shadow-xl hover:border-accent hover:shadow-accent/20">
           <CardHeader>
-            <CardTitle>Question Papers</CardTitle>
-            <CardDescription>Download previous exam papers for practice.</CardDescription>
+             <div className="flex items-center justify-center mb-2 text-primary">
+                <FileText size={32} />
+             </div>
+            <CardTitle className="text-center">Question Papers</CardTitle>
+            <CardDescription className="text-center">Download previous exam papers for practice.</CardDescription>
           </CardHeader>
-          <CardContent>
+          <CardContent className="text-center">
              {/* Updated Link: Pointing to external site and opening in new tab */}
             <Link
               href="https://www.bca-ycmou.com/question_papers.html"
@@ -56,10 +63,13 @@ const HomePage: React.FC = () => {
         {/* Practicals Section Card - Added transition and hover effects with accent border/shadow */}
         <Card className="transition duration-300 ease-in-out hover:scale-105 hover:shadow-xl hover:border-accent hover:shadow-accent/20">
           <CardHeader>
-            <CardTitle>Practicals</CardTitle>
-            <CardDescription>Find practical session materials and guides.</CardDescription>
+             <div className="flex items-center justify-center mb-2 text-primary">
+                <FlaskConical size={32} />
+             </div>
+            <CardTitle className="text-center">Practicals</CardTitle>
+            <CardDescription className="text-center">Find practical session materials and guides.</CardDescription>
           </CardHeader>
-          <CardContent>
+          <CardContent className="text-center">
             <Link
               href="https://www.bca-ycmou.com/practicals.html"
               className="text-accent hover:underline font-medium" // Use theme accent color
@@ -71,20 +81,75 @@ const HomePage: React.FC = () => {
           </CardContent>
         </Card>
 
-        {/* About Section Card - Added transition and hover effects with accent border/shadow */}
+        {/* FYBCA Section Card */}
         <Card className="transition duration-300 ease-in-out hover:scale-105 hover:shadow-xl hover:border-accent hover:shadow-accent/20">
           <CardHeader>
-            <CardTitle>About</CardTitle>
-            <CardDescription>Learn more about BCA</CardDescription> {/* Updated description */}
+             <div className="flex items-center justify-center mb-2 text-primary">
+                <GraduationCap size={32} />
+             </div>
+            <CardTitle className="text-center">FYBCA</CardTitle>
+            <CardDescription className="text-center">Resources for First Year BCA students.</CardDescription>
           </CardHeader>
-          <CardContent>
-            <Link href="/about" className="text-accent hover:underline font-medium"> {/* Use theme accent color */}
-              About us
-            </Link>
+          <CardContent className="text-center">
+            {/* Placeholder or link to relevant section */}
+            <span className="text-muted-foreground italic">Coming Soon</span>
+            {/* Example Link (if available):
+            <Link href="/fybca" className="text-accent hover:underline font-medium">
+              Explore FYBCA Resources
+            </Link> */}
           </CardContent>
         </Card>
 
-        {/* Add more cards for other resources as needed */}
+        {/* SYBCA Section Card */}
+        <Card className="transition duration-300 ease-in-out hover:scale-105 hover:shadow-xl hover:border-accent hover:shadow-accent/20">
+          <CardHeader>
+             <div className="flex items-center justify-center mb-2 text-primary">
+                 <GraduationCap size={32} />
+             </div>
+            <CardTitle className="text-center">SYBCA</CardTitle>
+            <CardDescription className="text-center">Resources for Second Year BCA students.</CardDescription>
+          </CardHeader>
+          <CardContent className="text-center">
+            {/* Placeholder or link to relevant section */}
+             <span className="text-muted-foreground italic">Coming Soon</span>
+            {/* Example Link (if available):
+            <Link href="/sybca" className="text-accent hover:underline font-medium">
+              Explore SYBCA Resources
+            </Link> */}
+          </CardContent>
+        </Card>
+
+        {/* TYBCA Section Card */}
+        <Card className="transition duration-300 ease-in-out hover:scale-105 hover:shadow-xl hover:border-accent hover:shadow-accent/20">
+          <CardHeader>
+             <div className="flex items-center justify-center mb-2 text-primary">
+                 <GraduationCap size={32} />
+             </div>
+            <CardTitle className="text-center">TYBCA</CardTitle>
+            <CardDescription className="text-center">Resources for Third Year BCA students.</CardDescription>
+          </CardHeader>
+          <CardContent className="text-center">
+            {/* Placeholder or link to relevant section */}
+             <span className="text-muted-foreground italic">Coming Soon</span>
+            {/* Example Link (if available):
+            <Link href="/tybca" className="text-accent hover:underline font-medium">
+              Explore TYBCA Resources
+            </Link> */}
+          </CardContent>
+        </Card>
+
+        {/* About Section Card - Kept for completeness */}
+        <Card className="transition duration-300 ease-in-out hover:scale-105 hover:shadow-xl hover:border-accent hover:shadow-accent/20 md:col-span-2 lg:col-span-3">
+          <CardHeader>
+            <CardTitle className="text-center">About</CardTitle>
+            <CardDescription className="text-center">Learn more about this resource hub.</CardDescription>
+          </CardHeader>
+          <CardContent className="text-center">
+            <Link href="/about" className="text-accent hover:underline font-medium"> {/* Use theme accent color */}
+              About Us
+            </Link>
+          </CardContent>
+        </Card>
 
       </section>
 
