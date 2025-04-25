@@ -34,10 +34,10 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <header className="bg-primary-blue py-4">
+          <header className="bg-primary-blue py-4 shadow-md"> {/* Added shadow */}
             <div className="container mx-auto">
               <nav className="flex items-center justify-between">
-                <Link href="/" className="text-white text-lg font-bold">
+                <Link href="/" className="text-white text-lg font-bold transition duration-300 hover:opacity-80"> {/* Added hover transition */}
                   BCA {/* Updated site name */}
                 </Link>
                 <div className="flex items-center space-x-6"> {/* Container for nav items and toggle */}
@@ -45,7 +45,7 @@ export default function RootLayout({
                     <li>
                       <Link
                         href="https://www.bca-ycmou.com/notes.html"
-                        className="text-white hover:text-gray-200"
+                        className="text-white hover:text-gray-200 transition duration-300 hover:scale-110 inline-block" // Added animation
                         target="_blank"
                         rel="noopener noreferrer"
                        >
@@ -55,7 +55,7 @@ export default function RootLayout({
                     <li>
                       <Link
                         href="https://www.bca-ycmou.com/question_papers.html"
-                        className="text-white hover:text-gray-200"
+                        className="text-white hover:text-gray-200 transition duration-300 hover:scale-110 inline-block" // Added animation
                         target="_blank"
                         rel="noopener noreferrer"
                       >
@@ -65,7 +65,7 @@ export default function RootLayout({
                     <li>
                       <Link
                         href="https://www.bca-ycmou.com/practicals.html"
-                        className="text-white hover:text-gray-200"
+                        className="text-white hover:text-gray-200 transition duration-300 hover:scale-110 inline-block" // Added animation
                         target="_blank"
                         rel="noopener noreferrer"
                       >
@@ -73,7 +73,7 @@ export default function RootLayout({
                       </Link>
                     </li>
                     <li>
-                      <Link href="/about" className="text-white hover:text-gray-200">
+                      <Link href="/about" className="text-white hover:text-gray-200 transition duration-300 hover:scale-110 inline-block"> {/* Added animation */}
                         About
                       </Link>
                     </li>
@@ -83,8 +83,8 @@ export default function RootLayout({
               </nav>
             </div>
           </header>
-          <main>{children}</main>
-          <footer className="mt-12 text-center py-4">
+          <main className="flex-grow">{children}</main> {/* Ensure main content pushes footer */}
+          <footer className="mt-12 text-center py-4 bg-secondary text-secondary-foreground"> {/* Added background */}
             <p>
               &copy; 2025 BCA. All rights reserved. | By Satyam Vishwakarma ( S . R )
             </p>
