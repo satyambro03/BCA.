@@ -8,8 +8,8 @@ body {
 
 @layer base {
   :root {
-    /* Reference: Light Gray (#f8f9fa) -> hsl(210, 17%, 98%) */
-    --background: 210 17% 98%;
+    /* Adjusted background to be slightly less white */
+    --background: 210 17% 96%; /* Was 210 17% 98% */
     /* Reference: Dark Text (#212529) -> hsl(210, 10%, 15%) */
     --foreground: 210 10% 15%;
     /* Reference: White (#ffffff) -> hsl(0, 0%, 100%) */
@@ -66,8 +66,8 @@ body {
     --popover-foreground: 210 17% 98%;
     /* Lighter blue for dark mode primary */
     --primary: 211 100% 60%;
-    /* Use light text on the lighter blue primary background */
-    --primary-foreground: 210 17% 98%;
+    /* Use dark text on the lighter blue primary background for better contrast */
+    --primary-foreground: 210 10% 15%; /* Changed from 210 17% 98% */
     /* Dark secondary */
     --secondary: 210 10% 25%;
     --secondary-foreground: 210 17% 95%;
