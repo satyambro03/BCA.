@@ -14,7 +14,12 @@ const contactFormSchema = z.object({
 
 type ContactFormData = z.infer<typeof contactFormSchema>;
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+// Initialize Resend client only if API key is available
+let resend: Resend | null = null;
+if (process.env.RESEND_API_KEY) {
+    resend = new Resend(process.env.RESEND_API_KEY);
+}
+
 const contactEmailTo = process.env.CONTACT_EMAIL_TO;
 const contactEmailFrom = process.env.CONTACT_EMAIL_FROM;
 
@@ -34,22 +39,22 @@ export async function submitContactForm(formData: ContactFormData): Promise<void
     throw new Error('Invalid form data provided.');
   }
 
-  if (!process.env.RESEND_API_KEY) {
-      console.error('Resend API key is not configured.');
-      throw new Error('Email configuration error. Please contact support.');
+  // Check if Resend API key is configured
+  if (!resend) {
+    console.error('Resend API key (RESEND_API_KEY) is not configured in environment variables.');
+    // Provide a user-friendly error message
+    throw new Error('Email service is not configured correctly. Please contact the site administrator.');
   }
 
   if (!contactEmailTo) {
-    console.error('CONTACT_EMAIL_TO environment variable is not set.');
-    throw new Error('Email configuration error. Please contact support.');
+    console.error('Recipient email address (CONTACT_EMAIL_TO) is not set in environment variables.');
+    throw new Error('Email configuration error. Please contact the site administrator.');
   }
 
   if (!contactEmailFrom) {
-    console.error('CONTACT_EMAIL_FROM environment variable is not set.');
-    // Defaulting to a potentially non-working address, but allows testing
-    console.warn('Using default CONTACT_EMAIL_FROM. Ensure this domain is verified in Resend.');
-    // Throw error if you want to prevent sending without a verified sender
-    // throw new Error('Email configuration error. Please contact support.');
+    console.error('Sender email address (CONTACT_EMAIL_FROM) is not set in environment variables.');
+    // Throw error to prevent sending without a verified sender
+    throw new Error('Email configuration error. Please contact the site administrator.');
   }
 
 
@@ -58,7 +63,7 @@ export async function submitContactForm(formData: ContactFormData): Promise<void
   try {
     console.log(`Attempting to send email from ${contactEmailFrom} to ${contactEmailTo}...`);
     const { data, error } = await resend.emails.send({
-      from: contactEmailFrom || 'onboarding@resend.dev', // Use configured or default sender
+      from: contactEmailFrom, // Use configured sender
       to: [contactEmailTo], // Recipient email from env var
       subject: `New Contact Form Submission: ${subject}`,
       reply_to: email, // Set the user's email as the reply-to address
@@ -83,10 +88,11 @@ export async function submitContactForm(formData: ContactFormData): Promise<void
 
   } catch (error) {
     console.error('Exception caught while sending email:', error);
-    // Re-throw a generic error for the client
-    if (error instanceof Error && error.message.startsWith('Failed to send message')) {
-        throw error; // Propagate specific error
+    // Re-throw a user-friendly error for the client
+    if (error instanceof Error && (error.message.startsWith('Failed to send message') || error.message.includes('Email configuration error') || error.message.includes('Email service is not configured'))) {
+        throw error; // Propagate specific, user-friendly errors
     }
     throw new Error('An unexpected error occurred while sending the message.');
   }
 }
+
