@@ -9,8 +9,8 @@ const HomePage: React.FC = () => {
     <div className="container mx-auto py-12 fade-in-up px-4"> {/* Added horizontal padding */}
       {/* Hero Section */}
       <section className="text-center mb-12 md:mb-16"> {/* Adjusted margin */}
-        {/* Updated heading to match reference */}
-        <h1 className="text-3xl md:text-4xl font-bold mb-4 text-primary">Welcome to BCA YCMOU</h1> {/* Responsive heading size */}
+        {/* Updated heading to remove YCMOU */}
+        <h1 className="text-3xl md:text-4xl font-bold mb-4 text-primary">Welcome to BCA</h1> {/* Responsive heading size */}
         {/* Updated description to match reference */}
         <p className="text-base md:text-lg text-muted-foreground">Explore comprehensive study notes, previous year's question papers, practical guides, and a collection of e-books tailored for BCA students, especially those at YCMOU.</p> {/* Responsive text size */}
       </section>
