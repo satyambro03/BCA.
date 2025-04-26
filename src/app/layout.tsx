@@ -7,7 +7,7 @@ import { ThemeToggle } from '@/components/theme-toggle';
 import { Instagram, Mail, Phone, Menu } from 'lucide-react'; // Added Menu icon
 import { Toaster } from "@/components/ui/toaster";
 import { Button } from '@/components/ui/button'; // Import Button
-import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet'; // Import Sheet components
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger, SheetClose } from '@/components/ui/sheet'; // Import Sheet components, Added SheetHeader, SheetTitle
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -51,7 +51,8 @@ export default function RootLayout({
           <header className="bg-primary text-primary-foreground py-4 shadow-md sticky top-0 z-50"> {/* Make header sticky */}
             <div className="container mx-auto px-4"> {/* Added horizontal padding */}
               <nav className="flex items-center justify-between">
-                <Link href="/" className="text-primary-foreground text-lg font-bold transition duration-300 hover:opacity-80 ml-4 md:ml-[10%]"> {/* Adjusted left margin for desktop */}
+                {/* Adjusted left margin for desktop, removed ml-4 for mobile */}
+                <Link href="/" className="text-primary-foreground text-lg font-bold transition duration-300 hover:opacity-80 md:ml-[10%]">
                   BCA
                 </Link>
                 {/* Desktop Navigation */}
@@ -82,8 +83,12 @@ export default function RootLayout({
                           <span className="sr-only">Toggle Menu</span>
                         </Button>
                       </SheetTrigger>
-                      <SheetContent side="right" className="w-[250px] sm:w-[300px] bg-background text-foreground p-4">
-                        <nav className="flex flex-col space-y-4 mt-6">
+                      {/* Added SheetHeader and SheetTitle */}
+                      <SheetContent side="right" className="w-[250px] sm:w-[300px] bg-background text-foreground p-4 flex flex-col">
+                        <SheetHeader className="mb-4">
+                            <SheetTitle className="text-left text-xl">Navigation</SheetTitle>
+                        </SheetHeader>
+                        <nav className="flex flex-col space-y-4 flex-grow">
                           {navLinks.map((link) => (
                             <SheetClose asChild key={link.href}>
                               <Link
@@ -116,7 +121,8 @@ export default function RootLayout({
               </a>
               <span className="hidden md:inline text-muted-foreground">|</span> {/* Hide separator on mobile */}
               <a href="tel:+917039201803" className="flex items-center text-secondary-foreground hover:text-primary transition duration-300">
-                <Phone size={16} className="mr-1" /> {/* Fixed icon size */}
+                 {/* Removed responsive size attribute as it's not standard */}
+                <Phone size={16} className="mr-1" />
                 +91 7039201803
               </a>
             </div>
