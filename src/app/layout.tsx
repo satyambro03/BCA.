@@ -55,7 +55,7 @@ export default function RootLayout({
               <nav className="flex items-center justify-between">
                 {/* Adjusted left margin for desktop, removed ml-4 for mobile */}
                 <Link href="/" className="text-primary-foreground text-lg font-bold transition duration-300 hover:opacity-80 md:ml-[10%]">
-                  BCA
+                  BCA YCMOU
                 </Link>
                 {/* Desktop Navigation */}
                 <div className="hidden md:flex items-center space-x-6">

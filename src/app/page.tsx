@@ -10,9 +10,9 @@ const HomePage: React.FC = () => {
       {/* Hero Section */}
       <section className="text-center mb-12 md:mb-16"> {/* Adjusted margin */}
         {/* Updated heading to match reference */}
-        <h1 className="text-3xl md:text-4xl font-bold mb-4 text-primary">Welcome to BCA</h1> {/* Responsive heading size */}
+        <h1 className="text-3xl md:text-4xl font-bold mb-4 text-primary">Welcome to BCA YCMOU</h1> {/* Responsive heading size */}
         {/* Updated description to match reference */}
-        <p className="text-base md:text-lg text-muted-foreground">Your go-to resource for quality education materials.</p> {/* Responsive text size */}
+        <p className="text-base md:text-lg text-muted-foreground">Explore comprehensive study notes, previous year's question papers, practical guides, and a collection of e-books tailored for BCA students, especially those at YCMOU.</p> {/* Responsive text size */}
       </section>
 
       {/* Features Section - Ensure responsive grid */}
