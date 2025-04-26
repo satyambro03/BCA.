@@ -18,10 +18,9 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Send } from 'lucide-react';
-import { submitContactForm } from '@/actions/contact'; // Import the server action
-import { useToast } from '@/hooks/use-toast'; // Import useToast
+import { submitContactForm } from '@/actions/contact';
+import { useToast } from '@/hooks/use-toast';
 
-// Define the form schema using Zod
 const formSchema = z.object({
   name: z.string().min(2, { message: 'Name must be at least 2 characters.' }),
   email: z.string().email({ message: 'Please enter a valid email address.' }),
@@ -32,7 +31,7 @@ const formSchema = z.object({
 type ContactFormValues = z.infer<typeof formSchema>;
 
 const ContactPage: React.FC = () => {
-  const { toast } = useToast(); // Initialize useToast
+  const { toast } = useToast();
   const form = useForm<ContactFormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -46,34 +45,35 @@ const ContactPage: React.FC = () => {
   const onSubmit = async (data: ContactFormValues) => {
     try {
       await submitContactForm(data);
-      toast({ // Show success toast
+      toast({
         title: 'Message Sent!',
         description: 'Thank you for contacting us. We will get back to you soon.',
-        variant: 'default', // Use default variant for success
+        variant: 'default',
       });
-      form.reset(); // Reset the form after successful submission
+      form.reset();
     } catch (error) {
       console.error('Error submitting form:', error);
-      toast({ // Show error toast
+      toast({
         title: 'Error Sending Message',
         description: 'Something went wrong. Please try again later.',
-        variant: 'destructive', // Use destructive variant for error
+        variant: 'destructive',
       });
     }
   };
 
   return (
-    <div className="container mx-auto py-12 fade-in-up">
-      <Card className="max-w-2xl mx-auto">
+    <div className="container mx-auto py-12 fade-in-up px-4"> {/* Added horizontal padding */}
+      {/* Make Card width responsive */}
+      <Card className="w-full max-w-2xl mx-auto">
         <CardHeader className="text-center">
-          <CardTitle className="text-3xl font-bold text-primary">Contact Us</CardTitle>
-          <CardDescription className="text-muted-foreground">
+          <CardTitle className="text-2xl md:text-3xl font-bold text-primary">Contact Us</CardTitle> {/* Responsive title */}
+          <CardDescription className="text-sm md:text-base text-muted-foreground"> {/* Responsive description */}
             Have questions or feedback? Fill out the form below and we'll get back to you.
           </CardDescription>
         </CardHeader>
         <CardContent>
           <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 md:space-y-6"> {/* Adjusted spacing */}
               <FormField
                 control={form.control}
                 name="name"
@@ -128,7 +128,7 @@ const ContactPage: React.FC = () => {
               />
               <Button type="submit" className="w-full" disabled={form.formState.isSubmitting}>
                 {form.formState.isSubmitting ? (
-                  <Send className="mr-2 h-4 w-4 animate-spin" /> // Show loading state
+                  <Send className="mr-2 h-4 w-4 animate-spin" />
                 ) : (
                   <Send className="mr-2 h-4 w-4" />
                 )}
@@ -143,5 +143,3 @@ const ContactPage: React.FC = () => {
 };
 
 export default ContactPage;
-
-    

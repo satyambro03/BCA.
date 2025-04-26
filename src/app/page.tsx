@@ -2,30 +2,27 @@
 import React from 'react';
 import Link from 'next/link';
 import {Card, CardContent, CardDescription, CardHeader, CardTitle} from '@/components/ui/card';
-import { BookOpen, FileText, FlaskConical, Info, Book, Mail } from 'lucide-react'; // Added Book and Mail icons
+import { BookOpen, FileText, FlaskConical, Info, Book, Mail } from 'lucide-react';
 
 const HomePage: React.FC = () => {
   return (
-    // Add fade-in animation to the main container
-    <div className="container mx-auto py-12 fade-in-up">
+    <div className="container mx-auto py-12 fade-in-up px-4"> {/* Added horizontal padding */}
       {/* Hero Section */}
-      <section className="text-center mb-16">
-        {/* Apply primary theme color to heading */}
-        <h1 className="text-4xl font-bold mb-4 text-primary">BCA</h1>
-        {/* Use muted foreground theme color for subtitle */}
-        <p className="text-lg text-muted-foreground">resource for quality education materials.</p>
+      <section className="text-center mb-12 md:mb-16"> {/* Adjusted margin */}
+        <h1 className="text-3xl md:text-4xl font-bold mb-4 text-primary">BCA</h1> {/* Responsive heading size */}
+        <p className="text-base md:text-lg text-muted-foreground">resource for quality education materials.</p> {/* Responsive text size */}
       </section>
 
-      {/* Features Section - Adjusted grid layout */}
-      <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"> {/* Changed lg to grid-cols-3 */}
+      {/* Features Section - Ensure responsive grid */}
+      <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"> {/* Adjusted gaps and breakpoints */}
         {/* Notes Section Card */}
         <Card className="transition duration-300 ease-in-out hover:scale-105 hover:shadow-xl hover:border-accent hover:shadow-accent/20">
           <CardHeader>
             <div className="flex items-center justify-center mb-2 text-primary">
                 <BookOpen size={32} />
             </div>
-            <CardTitle className="text-center">Notes</CardTitle>
-            <CardDescription className="text-center">Access study notes for various subjects.</CardDescription>
+            <CardTitle className="text-center text-xl md:text-2xl">Notes</CardTitle> {/* Responsive title */}
+            <CardDescription className="text-center text-sm md:text-base">Access study notes for various subjects.</CardDescription> {/* Responsive description */}
           </CardHeader>
           <CardContent className="text-center">
             <Link
@@ -45,8 +42,8 @@ const HomePage: React.FC = () => {
              <div className="flex items-center justify-center mb-2 text-primary">
                 <FileText size={32} />
              </div>
-            <CardTitle className="text-center">Question Papers</CardTitle>
-            <CardDescription className="text-center">Download previous exam papers for practice.</CardDescription>
+            <CardTitle className="text-center text-xl md:text-2xl">Question Papers</CardTitle> {/* Responsive title */}
+            <CardDescription className="text-center text-sm md:text-base">Download previous exam papers for practice.</CardDescription> {/* Responsive description */}
           </CardHeader>
           <CardContent className="text-center">
             <Link
@@ -66,8 +63,8 @@ const HomePage: React.FC = () => {
              <div className="flex items-center justify-center mb-2 text-primary">
                 <FlaskConical size={32} />
              </div>
-            <CardTitle className="text-center">Practicals</CardTitle>
-            <CardDescription className="text-center">Find practical session materials and guides.</CardDescription>
+            <CardTitle className="text-center text-xl md:text-2xl">Practicals</CardTitle> {/* Responsive title */}
+            <CardDescription className="text-center text-sm md:text-base">Find practical session materials and guides.</CardDescription> {/* Responsive description */}
           </CardHeader>
           <CardContent className="text-center">
             <Link
@@ -85,17 +82,17 @@ const HomePage: React.FC = () => {
         <Card className="transition duration-300 ease-in-out hover:scale-105 hover:shadow-xl hover:border-accent hover:shadow-accent/20">
           <CardHeader>
             <div className="flex items-center justify-center mb-2 text-primary">
-              <Book size={32} /> {/* E-Books Icon */}
+              <Book size={32} />
             </div>
-            <CardTitle className="text-center">E-Books</CardTitle>
-            <CardDescription className="text-center">Find digital textbooks and reference materials.</CardDescription>
+            <CardTitle className="text-center text-xl md:text-2xl">E-Books</CardTitle> {/* Responsive title */}
+            <CardDescription className="text-center text-sm md:text-base">Find digital textbooks and reference materials.</CardDescription> {/* Responsive description */}
           </CardHeader>
           <CardContent className="text-center">
             <Link
-              href="https://www.bca-ycmou.com/books.html" // Updated E-Books link
+              href="https://www.bca-ycmou.com/books.html"
               className="text-accent hover:underline font-medium"
-              target="_blank" // Open in new tab
-              rel="noopener noreferrer" // Security measure for new tabs
+              target="_blank"
+              rel="noopener noreferrer"
             >
               View E-Books
             </Link>
@@ -106,10 +103,10 @@ const HomePage: React.FC = () => {
          <Card className="transition duration-300 ease-in-out hover:scale-105 hover:shadow-xl hover:border-accent hover:shadow-accent/20">
           <CardHeader>
             <div className="flex items-center justify-center mb-2 text-primary">
-              <Mail size={32} /> {/* Contact Icon */}
+              <Mail size={32} />
             </div>
-            <CardTitle className="text-center">Contact</CardTitle>
-            <CardDescription className="text-center">Get in touch with us for queries or feedback.</CardDescription>
+            <CardTitle className="text-center text-xl md:text-2xl">Contact</CardTitle> {/* Responsive title */}
+            <CardDescription className="text-center text-sm md:text-base">Get in touch with us for queries or feedback.</CardDescription> {/* Responsive description */}
           </CardHeader>
           <CardContent className="text-center">
             <Link href="/contact" className="text-accent hover:underline font-medium">
@@ -119,18 +116,16 @@ const HomePage: React.FC = () => {
         </Card>
 
 
-        {/* About Section Card - No longer spanning columns */}
-        <Card className="transition duration-300 ease-in-out hover:scale-105 hover:shadow-xl hover:border-accent hover:shadow-accent/20 col-span-1"> {/* Changed col-span to 1 */}
+        {/* About Section Card */}
+        <Card className="transition duration-300 ease-in-out hover:scale-105 hover:shadow-xl hover:border-accent hover:shadow-accent/20 col-span-1">
            <CardHeader>
-             {/* Use primary theme color for icon */}
              <div className="flex items-center justify-center mb-2 text-primary">
-                <Info size={32} /> {/* Changed icon */}
+                <Info size={32} />
              </div>
-            <CardTitle className="text-center">About</CardTitle>
-            <CardDescription className="text-center">Learn more about this resource hub.</CardDescription>
+            <CardTitle className="text-center text-xl md:text-2xl">About</CardTitle> {/* Responsive title */}
+            <CardDescription className="text-center text-sm md:text-base">Learn more about this resource hub.</CardDescription> {/* Responsive description */}
           </CardHeader>
           <CardContent className="text-center">
-             {/* Use accent theme color for link */}
             <Link href="/about" className="text-accent hover:underline font-medium">
               About Us
             </Link>
@@ -138,8 +133,6 @@ const HomePage: React.FC = () => {
         </Card>
 
       </section>
-
-      {/* Attribution moved to layout */}
     </div>
   );
 };
