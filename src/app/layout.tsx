@@ -1,3 +1,4 @@
+
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
@@ -21,7 +22,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "BCA",
-  description: 'resource for quality education materials.',
+  // Updated description to match reference
+  description: 'Your go-to resource for quality education materials.',
 };
 
 export default function RootLayout({
@@ -85,7 +87,8 @@ export default function RootLayout({
                       </SheetTrigger>
                       {/* Added SheetHeader and SheetTitle */}
                       <SheetContent side="right" className="w-[250px] sm:w-[300px] bg-background text-foreground p-4 flex flex-col">
-                        <SheetHeader className="mb-4">
+                         {/* Add DialogTitle for accessibility */}
+                         <SheetHeader className="mb-4">
                             <SheetTitle className="text-left text-xl">Navigation</SheetTitle>
                         </SheetHeader>
                         <nav className="flex flex-col space-y-4 flex-grow">
@@ -121,7 +124,7 @@ export default function RootLayout({
               </a>
               <span className="hidden md:inline text-muted-foreground">|</span> {/* Hide separator on mobile */}
               <a href="tel:+917039201803" className="flex items-center text-secondary-foreground hover:text-primary transition duration-300">
-                <Phone size={16} className="mr-1" />
+                <Phone size={16} className="mr-1" /> {/* Use fixed size */}
                 +91 7039201803
               </a>
               <span className="hidden md:inline text-muted-foreground">|</span> {/* Hide separator on mobile */}
