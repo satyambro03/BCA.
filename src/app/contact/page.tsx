@@ -17,7 +17,7 @@ import {
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { Send } from 'lucide-react';
+import { Send, Loader2 } from 'lucide-react'; // Use Loader2 for spinner
 import { submitContactForm } from '@/actions/contact';
 import { useToast } from '@/hooks/use-toast';
 
@@ -44,18 +44,29 @@ const ContactPage: React.FC = () => {
 
   const onSubmit = async (data: ContactFormValues) => {
     try {
-      await submitContactForm(data);
-      toast({
-        title: 'Message Sent!',
-        description: 'Thank you for contacting us. We will get back to you soon.',
-        variant: 'default',
-      });
-      form.reset();
+      const result = await submitContactForm(data);
+
+      if (result.success) {
+        toast({
+          title: 'Message Sent!',
+          description: 'Thank you for contacting us. We will get back to you soon.',
+          variant: 'default', // Use default for success
+        });
+        form.reset();
+      } else {
+        // Display the specific error message from the server action
+        toast({
+          title: 'Error Sending Message',
+          description: result.message || 'An unknown error occurred.',
+          variant: 'destructive',
+        });
+      }
     } catch (error) {
+      // Catch unexpected client-side errors during the action call itself
       console.error('Error submitting form:', error);
       toast({
-        title: 'Error Sending Message',
-        description: 'Something went wrong. Please try again later.',
+        title: 'Error',
+        description: 'An unexpected client error occurred. Please try again.',
         variant: 'destructive',
       });
     }
@@ -128,7 +139,7 @@ const ContactPage: React.FC = () => {
               />
               <Button type="submit" className="w-full" disabled={form.formState.isSubmitting}>
                 {form.formState.isSubmitting ? (
-                  <Send className="mr-2 h-4 w-4 animate-spin" />
+                  <Loader2 className="mr-2 h-4 w-4 animate-spin" /> // Use Loader2 for spinner
                 ) : (
                   <Send className="mr-2 h-4 w-4" />
                 )}

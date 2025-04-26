@@ -6,18 +6,21 @@ import { Resend } from 'resend';
 
 // Define the schema for the contact form data using Zod
 const contactFormSchema = z.object({
-  name: z.string().min(2),
-  email: z.string().email(),
-  subject: z.string().min(5),
-  message: z.string().min(10),
+  name: z.string().min(2, { message: "Name must be at least 2 characters." }),
+  email: z.string().email({ message: "Please enter a valid email address." }),
+  subject: z.string().min(5, { message: "Subject must be at least 5 characters." }),
+  message: z.string().min(10, { message: "Message must be at least 10 characters." }),
 });
 
 type ContactFormData = z.infer<typeof contactFormSchema>;
 
-// Initialize Resend client only if API key is available
+// Initialize Resend client conditionally
 let resend: Resend | null = null;
-if (process.env.RESEND_API_KEY) {
-    resend = new Resend(process.env.RESEND_API_KEY);
+const resendApiKey = process.env.RESEND_API_KEY;
+if (resendApiKey) {
+    resend = new Resend(resendApiKey);
+} else {
+    console.warn('Resend API key (RESEND_API_KEY) is not configured in environment variables. Email sending will be disabled.');
 }
 
 const contactEmailTo = process.env.CONTACT_EMAIL_TO;
@@ -27,43 +30,43 @@ const contactEmailFrom = process.env.CONTACT_EMAIL_FROM;
  * Server action to handle the submission of the contact form.
  * Sends an email using Resend to the configured recipient address.
  *
- * @param formData The validated contact form data.
- * @returns A promise that resolves when the action is complete or rejects on error.
+ * @param formData The raw form data (will be validated internally).
+ * @returns A promise that resolves with an object indicating success or failure, including an error message if applicable.
  */
-export async function submitContactForm(formData: ContactFormData): Promise<void> {
+export async function submitContactForm(formData: unknown): Promise<{ success: boolean; message: string }> {
   // Validate the input data against the schema
   const validatedData = contactFormSchema.safeParse(formData);
 
   if (!validatedData.success) {
     console.error('Invalid contact form data:', validatedData.error.flatten().fieldErrors);
-    throw new Error('Invalid form data provided.');
+    // Extract a user-friendly message from the validation errors if possible
+    const firstError = validatedData.error.errors[0]?.message || 'Invalid form data provided.';
+    return { success: false, message: firstError };
   }
 
-  // Check if Resend API key is configured
+  // Check if Resend is configured and ready
   if (!resend) {
-    console.error('Resend API key (RESEND_API_KEY) is not configured in environment variables.');
+    console.error('Email service (Resend) is not configured correctly because RESEND_API_KEY is missing.');
     // Provide a user-friendly error message
-    throw new Error('Email service is not configured correctly. Please contact the site administrator.');
+    return { success: false, message: 'Email service is not configured. Please contact support.' };
   }
 
   if (!contactEmailTo) {
     console.error('Recipient email address (CONTACT_EMAIL_TO) is not set in environment variables.');
-    throw new Error('Email configuration error. Please contact the site administrator.');
+    return { success: false, message: 'Email configuration error (recipient missing). Please contact support.' };
   }
 
   if (!contactEmailFrom) {
     console.error('Sender email address (CONTACT_EMAIL_FROM) is not set in environment variables.');
-    // Throw error to prevent sending without a verified sender
-    throw new Error('Email configuration error. Please contact the site administrator.');
+    return { success: false, message: 'Email configuration error (sender missing). Please contact support.' };
   }
-
 
   const { name, email, subject, message } = validatedData.data;
 
   try {
     console.log(`Attempting to send email from ${contactEmailFrom} to ${contactEmailTo}...`);
     const { data, error } = await resend.emails.send({
-      from: contactEmailFrom, // Use configured sender
+      from: contactEmailFrom, // Use configured sender (must be verified in Resend)
       to: [contactEmailTo], // Recipient email from env var
       subject: `New Contact Form Submission: ${subject}`,
       reply_to: email, // Set the user's email as the reply-to address
@@ -80,19 +83,30 @@ export async function submitContactForm(formData: ContactFormData): Promise<void
 
     if (error) {
       console.error('Error sending email via Resend:', error);
-      throw new Error('Failed to send message. Please try again later.');
+      // Provide a more specific error if possible, otherwise generic
+      let errorMessage = 'Failed to send message due to a server error. Please try again later.';
+      if (error.message.includes('Invalid `from` address')) {
+        errorMessage = 'Email configuration error (invalid sender). Please contact support.';
+      } else if (error.message.includes('Invalid `to` address')) {
+         errorMessage = 'Email configuration error (invalid recipient). Please contact support.';
+      }
+      return { success: false, message: errorMessage };
     }
 
     console.log('Email sent successfully:', data);
-    // Indicate successful processing (no return value needed for simple cases)
+    return { success: true, message: 'Message sent successfully!' };
 
   } catch (error) {
     console.error('Exception caught while sending email:', error);
-    // Re-throw a user-friendly error for the client
-    if (error instanceof Error && (error.message.startsWith('Failed to send message') || error.message.includes('Email configuration error') || error.message.includes('Email service is not configured'))) {
-        throw error; // Propagate specific, user-friendly errors
+    // Handle unexpected errors
+    let errorMessage = 'An unexpected error occurred while sending the message.';
+     if (error instanceof Error) {
+         // You might want to log error.message for more details server-side
+         // but keep the client message generic unless it's a known configuration issue.
+         if (error.message.includes('configuration error')) {
+            errorMessage = error.message; // Propagate specific config errors
+         }
     }
-    throw new Error('An unexpected error occurred while sending the message.');
+    return { success: false, message: errorMessage };
   }
 }
-
