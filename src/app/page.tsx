@@ -14,17 +14,7 @@ const HomePage: React.FC = () => {
         <h1 className="text-3xl md:text-4xl font-bold mb-4 text-primary">Welcome to BCA</h1> {/* Responsive heading size */}
         {/* Updated description to match reference */}
         <p className="text-base md:text-lg text-muted-foreground mb-8">resource for quality education materials.</p> {/* Responsive text size */}
-        {/* Added Hero Image */}
-        <div className="flex justify-center mb-12">
-          <Image
-            src="https://picsum.photos/800/400?random=2" // Placeholder image URL (e.g., a relevant educational theme)
-            alt="Educational resources banner"
-            width={800}
-            height={400}
-            className="rounded-lg shadow-lg"
-            priority // Prioritize loading this image
-          />
-        </div>
+        {/* Hero Image Removed */}
       </section>
 
       {/* Features Section - Ensure responsive grid */}
