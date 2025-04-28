@@ -2,7 +2,7 @@
 import React from 'react';
 import Link from 'next/link';
 import {Card, CardContent, CardDescription, CardHeader, CardTitle} from '@/components/ui/card';
-import { BookOpen, FileText, FlaskConical, Info, Book, Mail, ClipboardCheck } from 'lucide-react'; // Added ClipboardCheck icon
+import { BookOpen, FileText, FlaskConical, Info, Book, Mail, ClipboardCheck, Award } from 'lucide-react'; // Added Award icon
 
 const HomePage: React.FC = () => {
   return (
@@ -115,6 +115,27 @@ const HomePage: React.FC = () => {
               </div>
               <CardTitle className="text-center text-xl md:text-2xl">Home Assignments</CardTitle> {/* Responsive title */}
               <CardDescription className="text-center text-sm md:text-base">Access and submit your home assignments.</CardDescription> {/* Responsive description */}
+            </CardHeader>
+            <CardContent className="text-center">
+              {/* Content can be added here if needed */}
+            </CardContent>
+          </Card>
+        </Link>
+
+        {/* Result Section Card - Wrapped in Link */}
+        <Link
+          href="https://ycmou.digitaluniversity.ac/SearchDuplicateResult.aspx?ID=861"
+          className="block group"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Card className="h-full transition duration-300 ease-in-out group-hover:scale-105 group-hover:shadow-xl group-hover:border-accent group-hover:shadow-accent/20"> {/* Added h-full and group-hover styles */}
+            <CardHeader>
+              <div className="flex items-center justify-center mb-2 text-primary">
+                <Award size={32} /> {/* Using Award icon for Result */}
+              </div>
+              <CardTitle className="text-center text-xl md:text-2xl">Result</CardTitle> {/* Responsive title */}
+              <CardDescription className="text-center text-sm md:text-base">Check your exam results online.</CardDescription> {/* Responsive description */}
             </CardHeader>
             <CardContent className="text-center">
               {/* Content can be added here if needed */}

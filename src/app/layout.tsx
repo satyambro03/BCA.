@@ -37,7 +37,8 @@ export default function RootLayout({
     { href: "https://www.bca-ycmou.com/question_papers.html", label: "Question Papers", external: true },
     { href: "https://www.bca-ycmou.com/practicals.html", label: "Practicals", external: true },
     { href: "https://www.bca-ycmou.com/books.html", label: "E-Books", external: true },
-    { href: "https://asm.ycmou.org.in/SiteContent/frmLanding", label: "Home Assignments", external: true }, // Added Home Assignments link
+    { href: "https://asm.ycmou.org.in/SiteContent/frmLanding", label: "Home Assignments", external: true },
+    { href: "https://ycmou.digitaluniversity.ac/SearchDuplicateResult.aspx?ID=861", label: "Result", external: true }, // Added Result link
     { href: "/about", label: "About" },
     { href: "/contact", label: "Contact" },
   ];
