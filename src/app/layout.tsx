@@ -23,7 +23,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "BCA",
   // Updated description to match reference
-  description: 'Your go-to resource for quality education materials.',
+  description: 'resource for quality education materials.',
 };
 
 export default function RootLayout({
@@ -37,6 +37,7 @@ export default function RootLayout({
     { href: "https://www.bca-ycmou.com/question_papers.html", label: "Question Papers", external: true },
     { href: "https://www.bca-ycmou.com/practicals.html", label: "Practicals", external: true },
     { href: "https://www.bca-ycmou.com/books.html", label: "E-Books", external: true },
+    { href: "https://asm.ycmou.org.in/SiteContent/frmLanding", label: "Home Assignments", external: true }, // Added Home Assignments link
     { href: "/about", label: "About" },
     { href: "/contact", label: "Contact" },
   ];
@@ -124,7 +125,7 @@ export default function RootLayout({
               </a>
               <span className="hidden md:inline text-muted-foreground">|</span> {/* Hide separator on mobile */}
               <a href="tel:+917039201803" className="flex items-center text-secondary-foreground hover:text-primary transition duration-300">
-                <Phone size={16} className="mr-1" /> {/* Use fixed size */}
+                <Phone size={16} className="mr-1" /> {/* Fixed size */}
                 +91 7039201803
               </a>
               <span className="hidden md:inline text-muted-foreground">|</span> {/* Hide separator on mobile */}

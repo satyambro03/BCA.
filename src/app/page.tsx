@@ -2,7 +2,7 @@
 import React from 'react';
 import Link from 'next/link';
 import {Card, CardContent, CardDescription, CardHeader, CardTitle} from '@/components/ui/card';
-import { BookOpen, FileText, FlaskConical, Info, Book, Mail } from 'lucide-react';
+import { BookOpen, FileText, FlaskConical, Info, Book, Mail, ClipboardCheck } from 'lucide-react'; // Added ClipboardCheck icon
 
 const HomePage: React.FC = () => {
   return (
@@ -97,6 +97,27 @@ const HomePage: React.FC = () => {
             </CardHeader>
             <CardContent className="text-center">
                {/* Removed inner link */}
+            </CardContent>
+          </Card>
+        </Link>
+
+        {/* Home Assignments Section Card - Wrapped in Link */}
+        <Link
+          href="https://asm.ycmou.org.in/SiteContent/frmLanding"
+          className="block group"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Card className="h-full transition duration-300 ease-in-out group-hover:scale-105 group-hover:shadow-xl group-hover:border-accent group-hover:shadow-accent/20"> {/* Added h-full and group-hover styles */}
+            <CardHeader>
+              <div className="flex items-center justify-center mb-2 text-primary">
+                <ClipboardCheck size={32} />
+              </div>
+              <CardTitle className="text-center text-xl md:text-2xl">Home Assignments</CardTitle> {/* Responsive title */}
+              <CardDescription className="text-center text-sm md:text-base">Access and submit your home assignments.</CardDescription> {/* Responsive description */}
+            </CardHeader>
+            <CardContent className="text-center">
+              {/* Content can be added here if needed */}
             </CardContent>
           </Card>
         </Link>
