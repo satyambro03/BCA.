@@ -110,8 +110,8 @@ body {
   }
   body {
     @apply bg-background text-foreground;
-    /* Add background image */
-    background-image: url('https://picsum.photos/1920/1080?grayscale&blur=2'); /* Grayscale and slightly blurred placeholder */
+    /* Add background image - Updated to a more relevant theme (e.g., technology/study) */
+    background-image: url('https://picsum.photos/1920/1080?random=2&grayscale&blur=2'); /* Changed random seed, kept grayscale and blur */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
