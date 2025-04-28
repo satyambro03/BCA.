@@ -1,6 +1,8 @@
+
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { BookOpenText, FileText, Lightbulb, Book } from 'lucide-react';
+import Image from 'next/image'; // Import next/image
 
 const AboutPage: React.FC = () => {
   return (
@@ -11,11 +13,22 @@ const AboutPage: React.FC = () => {
         <p className="text-base md:text-lg text-center text-muted-foreground mb-8 max-w-4xl mx-auto"> {/* Responsive text, max-width */}
           Welcome to the BCA Resource Hub, your dedicated platform for accessing essential materials for the Bachelor of Computer Applications (BCA) program, particularly focusing on resources relevant to YCMOU (Yashwantrao Chavan Maharashtra Open University) students.
         </p>
+        {/* Added a relevant placeholder image */}
+        <div className="flex justify-center mb-12">
+          <Image
+            src="https://picsum.photos/800/300?random=1" // Placeholder image URL
+            alt="Educational resources"
+            width={800}
+            height={300}
+            className="rounded-lg shadow-lg"
+          />
+        </div>
       </section>
 
       {/* Adjusted grid for better responsiveness */}
       <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-12">
-        <Card className="text-center transition duration-300 ease-in-out hover:shadow-lg hover:border-accent hover:shadow-accent/20">
+        {/* Enhanced hover effect on cards */}
+        <Card className="text-center transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-xl hover:border-primary hover:shadow-primary/20 border">
           <CardHeader>
             <div className="flex justify-center mb-4 text-primary">
               <BookOpenText className="h-10 w-10 md:h-12 md:w-12" /> {/* Responsive icon size */}
@@ -28,7 +41,7 @@ const AboutPage: React.FC = () => {
             </p>
           </CardContent>
         </Card>
-        <Card className="text-center transition duration-300 ease-in-out hover:shadow-lg hover:border-accent hover:shadow-accent/20">
+        <Card className="text-center transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-xl hover:border-primary hover:shadow-primary/20 border">
           <CardHeader>
             <div className="flex justify-center mb-4 text-primary">
               <FileText className="h-10 w-10 md:h-12 md:w-12" /> {/* Responsive icon size */}
@@ -41,7 +54,7 @@ const AboutPage: React.FC = () => {
             </p>
           </CardContent>
         </Card>
-        <Card className="text-center transition duration-300 ease-in-out hover:shadow-lg hover:border-accent hover:shadow-accent/20">
+        <Card className="text-center transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-xl hover:border-primary hover:shadow-primary/20 border">
           <CardHeader>
             <div className="flex justify-center mb-4 text-primary">
               <Lightbulb className="h-10 w-10 md:h-12 md:w-12" /> {/* Responsive icon size */}
@@ -54,7 +67,7 @@ const AboutPage: React.FC = () => {
             </p>
           </CardContent>
         </Card>
-        <Card className="text-center transition duration-300 ease-in-out hover:shadow-lg hover:border-accent hover:shadow-accent/20">
+        <Card className="text-center transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-xl hover:border-primary hover:shadow-primary/20 border">
           <CardHeader>
             <div className="flex justify-center mb-4 text-primary">
               <Book className="h-10 w-10 md:h-12 md:w-12" /> {/* Responsive icon size */}

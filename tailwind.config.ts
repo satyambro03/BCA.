@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -87,11 +88,23 @@ export default {
           '0%': { opacity: '0', transform: 'translateY(20px)' },
           '100%': { opacity: '1', transform: 'translateY(0)' },
         },
+         // Add subtle hover scale animation
+         'subtle-scale': {
+           '0%, 100%': { transform: 'scale(1)' },
+           '50%': { transform: 'scale(1.02)' },
+         },
+          // Add subtle shadow grow animation
+         'shadow-grow': {
+           '0%, 100%': { boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1)' }, // Default shadow-sm
+           '50%': { boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1)' }, // Default shadow-lg
+         },
   		},
   		animation: {
   			'accordion-down': 'accordion-down 0.2s ease-out',
   			'accordion-up': 'accordion-up 0.2s ease-out',
         'fade-in-up': 'fadeInUp 0.6s ease-out forwards', // Added fadeInUp animation utility
+         'subtle-scale': 'subtle-scale 0.3s ease-in-out',
+         'shadow-grow': 'shadow-grow 0.3s ease-in-out',
   		}
   	}
   },

@@ -12,7 +12,7 @@ const HomePage: React.FC = () => {
         {/* Updated heading to remove YCMOU */}
         <h1 className="text-3xl md:text-4xl font-bold mb-4 text-primary">Welcome to BCA</h1> {/* Responsive heading size */}
         {/* Updated description to match reference */}
-        <p className="text-base md:text-lg text-muted-foreground">Explore comprehensive study notes, previous year's question papers, practical guides, and a collection of e-books tailored for BCA students, especially those at YCMOU.</p> {/* Responsive text size */}
+        <p className="text-base md:text-lg text-muted-foreground">resource for quality education materials.</p> {/* Responsive text size */}
       </section>
 
       {/* Features Section - Ensure responsive grid */}
@@ -24,7 +24,8 @@ const HomePage: React.FC = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Card className="h-full transition duration-300 ease-in-out group-hover:scale-105 group-hover:shadow-xl group-hover:border-accent group-hover:shadow-accent/20"> {/* Added h-full and group-hover styles */}
+          {/* Enhanced hover effect: increased scale, smoother transition, border color change */}
+          <Card className="h-full transition-all duration-300 ease-in-out group-hover:scale-105 group-hover:shadow-xl group-hover:border-primary group-hover:shadow-primary/20 border">
             <CardHeader>
               <div className="flex items-center justify-center mb-2 text-primary">
                   <BookOpen size={32} />
@@ -45,7 +46,8 @@ const HomePage: React.FC = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Card className="h-full transition duration-300 ease-in-out group-hover:scale-105 group-hover:shadow-xl group-hover:border-accent group-hover:shadow-accent/20"> {/* Added h-full and group-hover styles */}
+          {/* Enhanced hover effect */}
+          <Card className="h-full transition-all duration-300 ease-in-out group-hover:scale-105 group-hover:shadow-xl group-hover:border-primary group-hover:shadow-primary/20 border">
             <CardHeader>
                <div className="flex items-center justify-center mb-2 text-primary">
                   <FileText size={32} />
@@ -66,7 +68,8 @@ const HomePage: React.FC = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Card className="h-full transition duration-300 ease-in-out group-hover:scale-105 group-hover:shadow-xl group-hover:border-accent group-hover:shadow-accent/20"> {/* Added h-full and group-hover styles */}
+          {/* Enhanced hover effect */}
+          <Card className="h-full transition-all duration-300 ease-in-out group-hover:scale-105 group-hover:shadow-xl group-hover:border-primary group-hover:shadow-primary/20 border">
             <CardHeader>
                <div className="flex items-center justify-center mb-2 text-primary">
                   <FlaskConical size={32} />
@@ -87,7 +90,8 @@ const HomePage: React.FC = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Card className="h-full transition duration-300 ease-in-out group-hover:scale-105 group-hover:shadow-xl group-hover:border-accent group-hover:shadow-accent/20"> {/* Added h-full and group-hover styles */}
+           {/* Enhanced hover effect */}
+          <Card className="h-full transition-all duration-300 ease-in-out group-hover:scale-105 group-hover:shadow-xl group-hover:border-primary group-hover:shadow-primary/20 border">
             <CardHeader>
               <div className="flex items-center justify-center mb-2 text-primary">
                 <Book size={32} />
@@ -108,7 +112,8 @@ const HomePage: React.FC = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Card className="h-full transition duration-300 ease-in-out group-hover:scale-105 group-hover:shadow-xl group-hover:border-accent group-hover:shadow-accent/20"> {/* Added h-full and group-hover styles */}
+           {/* Enhanced hover effect */}
+          <Card className="h-full transition-all duration-300 ease-in-out group-hover:scale-105 group-hover:shadow-xl group-hover:border-primary group-hover:shadow-primary/20 border">
             <CardHeader>
               <div className="flex items-center justify-center mb-2 text-primary">
                 <ClipboardCheck size={32} />
@@ -129,7 +134,8 @@ const HomePage: React.FC = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Card className="h-full transition duration-300 ease-in-out group-hover:scale-105 group-hover:shadow-xl group-hover:border-accent group-hover:shadow-accent/20"> {/* Added h-full and group-hover styles */}
+           {/* Enhanced hover effect */}
+          <Card className="h-full transition-all duration-300 ease-in-out group-hover:scale-105 group-hover:shadow-xl group-hover:border-primary group-hover:shadow-primary/20 border">
             <CardHeader>
               <div className="flex items-center justify-center mb-2 text-primary">
                 <ClipboardList size={32} /> {/* Using ClipboardList icon for Hall Ticket */}
@@ -150,7 +156,8 @@ const HomePage: React.FC = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Card className="h-full transition duration-300 ease-in-out group-hover:scale-105 group-hover:shadow-xl group-hover:border-accent group-hover:shadow-accent/20"> {/* Added h-full and group-hover styles */}
+           {/* Enhanced hover effect */}
+          <Card className="h-full transition-all duration-300 ease-in-out group-hover:scale-105 group-hover:shadow-xl group-hover:border-primary group-hover:shadow-primary/20 border">
             <CardHeader>
               <div className="flex items-center justify-center mb-2 text-primary">
                 <Award size={32} /> {/* Using Award icon for Result */}
@@ -166,7 +173,8 @@ const HomePage: React.FC = () => {
 
          {/* Contact Section Card - Wrapped in Link */}
          <Link href="/contact" className="block group">
-           <Card className="h-full transition duration-300 ease-in-out group-hover:scale-105 group-hover:shadow-xl group-hover:border-accent group-hover:shadow-accent/20"> {/* Added h-full and group-hover styles */}
+            {/* Enhanced hover effect */}
+           <Card className="h-full transition-all duration-300 ease-in-out group-hover:scale-105 group-hover:shadow-xl group-hover:border-primary group-hover:shadow-primary/20 border">
             <CardHeader>
               <div className="flex items-center justify-center mb-2 text-primary">
                 <Mail size={32} />
@@ -183,7 +191,8 @@ const HomePage: React.FC = () => {
 
         {/* About Section Card - Wrapped in Link */}
         <Link href="/about" className="block group">
-          <Card className="h-full transition duration-300 ease-in-out group-hover:scale-105 group-hover:shadow-xl group-hover:border-accent group-hover:shadow-accent/20 col-span-1"> {/* Added h-full and group-hover styles */}
+           {/* Enhanced hover effect */}
+          <Card className="h-full transition-all duration-300 ease-in-out group-hover:scale-105 group-hover:shadow-xl group-hover:border-primary group-hover:shadow-primary/20 border col-span-1">
              <CardHeader>
                <div className="flex items-center justify-center mb-2 text-primary">
                   <Info size={32} />
