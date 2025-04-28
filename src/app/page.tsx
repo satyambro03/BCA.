@@ -2,7 +2,7 @@
 import React from 'react';
 import Link from 'next/link';
 import {Card, CardContent, CardDescription, CardHeader, CardTitle} from '@/components/ui/card';
-import { BookOpen, FileText, FlaskConical, Info, Book, Mail, ClipboardCheck, Award } from 'lucide-react'; // Added Award icon
+import { BookOpen, FileText, FlaskConical, Info, Book, Mail, ClipboardCheck, Award, ClipboardList } from 'lucide-react'; // Added ClipboardList icon
 
 const HomePage: React.FC = () => {
   return (
@@ -115,6 +115,27 @@ const HomePage: React.FC = () => {
               </div>
               <CardTitle className="text-center text-xl md:text-2xl">Home Assignments</CardTitle> {/* Responsive title */}
               <CardDescription className="text-center text-sm md:text-base">Access and submit your home assignments.</CardDescription> {/* Responsive description */}
+            </CardHeader>
+            <CardContent className="text-center">
+              {/* Content can be added here if needed */}
+            </CardContent>
+          </Card>
+        </Link>
+
+        {/* Hall Ticket Section Card - Wrapped in Link */}
+        <Link
+          href="https://ycmou.digitaluniversity.ac/PreExamV2_DownloadHallTicket_New.aspx?ID=28070"
+          className="block group"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Card className="h-full transition duration-300 ease-in-out group-hover:scale-105 group-hover:shadow-xl group-hover:border-accent group-hover:shadow-accent/20"> {/* Added h-full and group-hover styles */}
+            <CardHeader>
+              <div className="flex items-center justify-center mb-2 text-primary">
+                <ClipboardList size={32} /> {/* Using ClipboardList icon for Hall Ticket */}
+              </div>
+              <CardTitle className="text-center text-xl md:text-2xl">Hall Ticket</CardTitle> {/* Responsive title */}
+              <CardDescription className="text-center text-sm md:text-base">Download your examination hall ticket.</CardDescription> {/* Responsive description */}
             </CardHeader>
             <CardContent className="text-center">
               {/* Content can be added here if needed */}
