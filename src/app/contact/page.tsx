@@ -73,7 +73,8 @@ const ContactPage: React.FC = () => {
   };
 
   return (
-    <div className="container mx-auto py-12 fade-in-up px-4"> {/* Added horizontal padding */}
+    // Added content-area class for background styling
+    <div className="container mx-auto py-12 fade-in-up px-4 content-area">
       {/* Make Card width responsive */}
       <Card className="w-full max-w-2xl mx-auto">
         <CardHeader className="text-center">

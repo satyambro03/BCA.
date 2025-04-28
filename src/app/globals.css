@@ -110,8 +110,8 @@ body {
   }
   body {
     @apply bg-background text-foreground;
-    /* Add background image - Updated to a more relevant theme (e.g., technology/study) */
-    background-image: url('https://picsum.photos/1920/1080?random=2&grayscale&blur=2'); /* Changed random seed, kept grayscale and blur */
+    /* Add background image - Updated to user-provided URL */
+    background-image: url('https://sdmntprnorthcentralus.oaiusercontent.com/files/00000000-e0dc-622f-86a3-5a69042fa1f1/raw?se=2025-04-28T19%3A19%3A59Z&sp=r&sv=2024-08-04&sr=b&scid=d9408c2d-98c2-5df8-8fc6-7c3a9f58f3f8&skoid=a3336399-497e-45e5-8f28-4b88ecca3d1f&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-04-27T21%3A04%3A26Z&ske=2025-04-28T21%3A04%3A26Z&sks=b&skv=2024-08-04&sig=DqKMIrw3DfrGyEsoBmlaAGUMs2QZa%2Bq8YY0dm3S5UEI%3D');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

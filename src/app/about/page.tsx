@@ -6,7 +6,8 @@ import Image from 'next/image'; // Import next/image
 
 const AboutPage: React.FC = () => {
   return (
-    <div className="container mx-auto py-12 fade-in-up px-4"> {/* Added horizontal padding */}
+    // Added content-area class for background styling
+    <div className="container mx-auto py-12 fade-in-up px-4 content-area">
       <h1 className="text-2xl md:text-3xl font-bold mb-8 text-primary text-center">About BCA Resource Hub</h1> {/* Responsive heading */}
 
       <section className="mb-12">
