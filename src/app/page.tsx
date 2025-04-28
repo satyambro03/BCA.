@@ -8,14 +8,7 @@ import { BookOpen, FileText, FlaskConical, Info, Book, Mail, ClipboardCheck, Awa
 const HomePage: React.FC = () => {
   return (
     <div className="container mx-auto py-12 fade-in-up px-4"> {/* Added horizontal padding */}
-      {/* Hero Section */}
-      <section className="text-center mb-12 md:mb-16"> {/* Adjusted margin */}
-        {/* Updated heading to remove YCMOU */}
-        <h1 className="text-3xl md:text-4xl font-bold mb-4 text-primary">Welcome to BCA</h1> {/* Responsive heading size */}
-        {/* Updated description to match reference */}
-        <p className="text-base md:text-lg text-muted-foreground mb-8">resource for quality education materials.</p> {/* Responsive text size */}
-        {/* Hero Image Removed */}
-      </section>
+
 
       {/* Features Section - Ensure responsive grid */}
       <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"> {/* Adjusted gaps and breakpoints */}
