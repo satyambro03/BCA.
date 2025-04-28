@@ -95,16 +95,16 @@ export default {
          },
           // Add subtle shadow grow animation
          'shadow-grow': {
-           '0%, 100%': { boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1)' }, // Default shadow-sm
-           '50%': { boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1)' }, // Default shadow-lg
+           '0%, 100%': { boxShadow: 'var(--tw-shadow)' }, // Start and end with the element's current shadow
+           '50%': { boxShadow: 'var(--tw-shadow-lg)' }, // Grow to shadow-lg at the midpoint
          },
   		},
   		animation: {
   			'accordion-down': 'accordion-down 0.2s ease-out',
   			'accordion-up': 'accordion-up 0.2s ease-out',
         'fade-in-up': 'fadeInUp 0.6s ease-out forwards', // Added fadeInUp animation utility
-         'subtle-scale': 'subtle-scale 0.3s ease-in-out',
-         'shadow-grow': 'shadow-grow 0.3s ease-in-out',
+         'subtle-scale': 'subtle-scale 0.3s ease-in-out infinite alternate', // Apply infinite alternate scale animation
+         'shadow-grow': 'shadow-grow 0.3s ease-in-out infinite alternate', // Apply infinite alternate shadow animation
   		}
   	}
   },
