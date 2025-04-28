@@ -53,7 +53,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <header className="bg-primary text-primary-foreground py-4 shadow-md sticky top-0 z-50"> {/* Make header sticky */}
+          <header className="bg-primary text-primary-foreground py-4 shadow-md sticky top-0 z-50 backdrop-blur-md bg-primary/90"> {/* Added backdrop blur and slight transparency */}
             <div className="container mx-auto px-4"> {/* Added horizontal padding */}
               <nav className="flex items-center justify-between">
                 {/* Adjusted left margin for desktop, removed ml-4 for mobile */}
@@ -114,7 +114,8 @@ export default function RootLayout({
               </nav>
             </div>
           </header>
-          <main className="flex-grow container mx-auto py-8 px-4">{children}</main> {/* Added horizontal padding */}
+          {/* Added content-area class for background styling */}
+          <main className="flex-grow container mx-auto py-8 px-4 content-area">{children}</main> {/* Added horizontal padding and content-area class */}
           <footer className="mt-auto text-center py-6 bg-secondary text-secondary-foreground px-4"> {/* Added horizontal padding */}
             <p className="mb-4 text-sm md:text-base"> {/* Responsive text size */}
               &copy; 2025 BCA. All rights reserved. | By Satyam Vishwakarma ( S . R )

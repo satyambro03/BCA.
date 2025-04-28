@@ -102,10 +102,6 @@ body {
     --sidebar-ring: 211 100% 60%;
   }
 
-  /* Removed custom color classes as they are now handled by theme variables */
-  /* .bg-secondary-light ... */
-  /* .bg-primary-blue ... */
-  /* .text-teal-accent ... */
 }
 
 @layer base {
@@ -114,9 +110,26 @@ body {
   }
   body {
     @apply bg-background text-foreground;
+    /* Add background image */
+    background-image: url('https://picsum.photos/1920/1080?grayscale&blur=2'); /* Grayscale and slightly blurred placeholder */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Keeps the background fixed during scroll */
     /* Add subtle background transition */
     @apply transition-colors duration-500;
   }
+  /* Apply a semi-transparent background to the main content area for better readability */
+  main.content-area {
+     @apply bg-background/90 backdrop-blur-sm; /* Use theme background with opacity and add blur */
+     @apply rounded-lg shadow-lg; /* Optional: Add rounding and shadow */
+  }
+
+   /* Ensure footer also has a background for readability */
+  footer {
+     @apply bg-secondary/95 backdrop-blur-sm; /* Adjust opacity as needed */
+  }
+
 }
 
 /* Add subtle page load animation */

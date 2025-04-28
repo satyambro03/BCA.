@@ -1,6 +1,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image'; // Import next/image
 import {Card, CardContent, CardDescription, CardHeader, CardTitle} from '@/components/ui/card';
 import { BookOpen, FileText, FlaskConical, Info, Book, Mail, ClipboardCheck, Award, ClipboardList } from 'lucide-react'; // Added ClipboardList icon
 
@@ -12,7 +13,18 @@ const HomePage: React.FC = () => {
         {/* Updated heading to remove YCMOU */}
         <h1 className="text-3xl md:text-4xl font-bold mb-4 text-primary">Welcome to BCA</h1> {/* Responsive heading size */}
         {/* Updated description to match reference */}
-        <p className="text-base md:text-lg text-muted-foreground">resource for quality education materials.</p> {/* Responsive text size */}
+        <p className="text-base md:text-lg text-muted-foreground mb-8">resource for quality education materials.</p> {/* Responsive text size */}
+        {/* Added Hero Image */}
+        <div className="flex justify-center mb-12">
+          <Image
+            src="https://picsum.photos/id/10/800/400" // Placeholder image URL (e.g., a relevant educational theme)
+            alt="Educational resources banner"
+            width={800}
+            height={400}
+            className="rounded-lg shadow-lg"
+            priority // Prioritize loading this image
+          />
+        </div>
       </section>
 
       {/* Features Section - Ensure responsive grid */}
