@@ -117,7 +117,7 @@ export default function RootLayout({
           <main className="flex-grow container mx-auto py-8 px-4 content-area">{children}</main> {/* Added horizontal padding */}
           <footer className="mt-auto text-center py-6 bg-secondary text-secondary-foreground px-4"> {/* Added horizontal padding */}
             <p className="mb-4 text-sm md:text-base"> {/* Responsive text size */}
-              &copy; 2025 BCA. All rights reserved. | By Satyam Vishwakarma   ( S . R
+              &copy; 2025 BCA. All rights reserved. | By Satyam Vishwakarma    ( S . R )
             </p>
             {/* Contact Information */}
             <div className="flex flex-col md:flex-row justify-center items-center space-y-2 md:space-y-0 md:space-x-4 mb-4 text-xs md:text-sm"> {/* Responsive layout and text size */}
