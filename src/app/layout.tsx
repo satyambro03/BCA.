@@ -273,14 +273,8 @@ export default function RootLayout({
                   <li>
                      {/* Added hover transition effect */}
                      <a href="mailto:satyambro333@gmail.com" className="flex items-center hover:text-primary transition duration-300">
-                       {/* Replace SVG with Image component using the provided URL */}
-                       <Image
-                         src="https://www.svgrepo.com/show/361773/email.svg"
-                         alt="Email Icon"
-                         width={16} // Set appropriate width
-                         height={16} // Set appropriate height
-                         className="mr-2"
-                       />
+                       {/* Replaced Image component with lucide-react Mail icon */}
+                       <Mail size={16} className="mr-2" />
                        satyambro333@gmail.com
                      </a>
                   </li>
