@@ -3,6 +3,7 @@ import type { Metadata, Viewport } from 'next';
 import { GeistSans } from 'geist/font/sans';
 // Removed: import { GeistMono } from 'geist/font/mono';
 import Link from 'next/link';
+import Image from 'next/image'; // Import Image component
 import {
   Sheet,
   SheetContent,
@@ -270,7 +271,17 @@ export default function RootLayout({
                 <h3 className="font-semibold mb-3 text-base text-primary">Contact</h3>
                 <ul className="space-y-2 mb-4">
                   <li>
-                    <a href="mailto:satyambro333@gmail.com" className="flex items-center hover:text-primary transition duration-300"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-mail mr-2"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg> satyambro333@gmail.com</a>
+                     <a href="mailto:satyambro333@gmail.com" className="flex items-center hover:text-primary transition duration-300">
+                       {/* Replace SVG with Image component */}
+                       <Image
+                         src="https://images.icon-icons.com/2642/PNG/512/google_mail_gmail_logo_icon_159346.png"
+                         alt="Gmail Icon"
+                         width={16} // Set appropriate width
+                         height={16} // Set appropriate height
+                         className="mr-2"
+                       />
+                       satyambro333@gmail.com
+                     </a>
                   </li>
                   <li>
                     <a href="tel:+917039201803" className="flex items-center hover:text-primary transition duration-300">

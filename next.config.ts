@@ -17,6 +17,12 @@ const nextConfig: NextConfig = {
         port: '',
         pathname: '**',
       },
+      { // Added images.icon-icons.com
+        protocol: 'https',
+        hostname: 'images.icon-icons.com',
+        port: '',
+        pathname: '**',
+      },
     ],
   },
 };
