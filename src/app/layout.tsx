@@ -12,7 +12,7 @@ import {
   SheetClose, // Added SheetClose
 } from '@/components/ui/sheet';
 import { Button } from '@/components/ui/button';
-import { Menu, Phone, Mail, Linkedin, Instagram } from 'lucide-react'; // Import Phone and Mail icons
+import { Menu, Phone, Mail, Instagram } from 'lucide-react'; // Import Phone and Mail icons
 import { ThemeProvider } from '@/components/theme-provider';
 import { ThemeToggle } from '@/components/theme-toggle';
 import { Toaster } from '@/components/ui/toaster';
@@ -302,7 +302,7 @@ export default function RootLayout({
 
              {/* Copyright */}
             <div className="text-center mt-8 pt-4 border-t border-border">
-              <p className="text-xs text-muted-foreground">
+              <p className="text-sm text-muted-foreground">
                  &copy; {new Date().getFullYear()} BCA. All rights reserved.
               </p>
             </div>
