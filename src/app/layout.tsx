@@ -258,12 +258,14 @@ export default function RootLayout({
                 <ul className="space-y-2 mb-4">
                   <li>
                     <a href="mailto:satyambro333@gmail.com" className="flex items-center hover:text-primary transition duration-300">
-                      <Mail size={16} className="mr-2" /> satyambro333@gmail.com
+                      <Mail size={16} className="mr-2" /> {/* Added Mail icon */}
+                      satyambro333@gmail.com
                     </a>
                   </li>
                   <li>
                     <a href="tel:+917039201803" className="flex items-center hover:text-primary transition duration-300">
-                      <Phone size={16} className="mr-2" /> +91 7039201803
+                      <Phone size={16} className="mr-2" />
+                      +91 7039201803
                     </a>
                   </li>
                   {/* Added WhatsApp contact link */}
