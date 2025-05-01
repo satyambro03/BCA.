@@ -62,7 +62,7 @@ export default function RootLayout({
             <div className="container mx-auto px-4"> {/* Added horizontal padding */}
               <nav className="flex items-center justify-between">
                 {/* Adjusted left margin for desktop, removed ml-4 for mobile */}
-                <Link href="/" className="text-primary-foreground text-lg font-bold transition duration-300 hover:opacity-80 md:ml-[10%]">
+                <Link href="/" className="text-primary-foreground text-xl font-bold transition duration-300 hover:opacity-80 md:ml-[10%]"> {/* Increased font size from lg to xl */}
                   BCA YCMOU
                 </Link>
                 {/* Desktop Navigation */}
@@ -239,3 +239,5 @@ export default function RootLayout({
     </html>
   );
 }
+
+    
