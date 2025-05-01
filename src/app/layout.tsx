@@ -1,4 +1,3 @@
-
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
@@ -69,8 +68,8 @@ export default function RootLayout({
             <div className="container mx-auto px-4"> {/* Added horizontal padding */}
               <nav className="flex items-center justify-between">
                 {/* Adjusted left margin for desktop, removed ml-4 for mobile */}
-                <Link href="/" className="text-primary-foreground text-3xl font-bold transition duration-300 hover:opacity-80 md:ml-[10%]"> {/* Increased font size from xl to 2xl */}
-                  BCA
+                <Link href="/" className="text-primary-foreground text-4xl font-bold transition duration-300 hover:opacity-80 md:ml-[10%]"> {/* Increased font size from xl to 2xl */}
+                  BCA YCMOU
                 </Link>
                 {/* Desktop Navigation */}
                 <div className="hidden md:flex items-center space-x-6">
@@ -138,27 +137,46 @@ export default function RootLayout({
                  </div>
                  {/* University Links */}
                  <div>
-                   <h3 className="text-lg font-semibold mb-3 text-primary">University Links</h3>
+                   <h3 className="text-lg font-semibold mb-3 text-primary">College Links</h3>
                    <ul className="space-y-2">
-                     {footerUniLinks.map((link) => (
-                       <li key={link.href}>
-                         <Link
-                           href={link.href}
-                           className="text-sm hover:text-primary transition duration-300"
-                           target={link.external ? "_blank" : undefined}
-                           rel={link.external ? "noopener noreferrer" : undefined}
-                         >
-                           {link.label}
-                         </Link>
+                       {/* Direct College Links */}
+                       <li>
+                           <a
+                               href="https://ycmou.ac.in/"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               className="text-sm hover:text-primary transition duration-300"
+                           >
+                               YCMOU
+                           </a>
                        </li>
-                     ))}
+                       <li>
+                           <a
+                               href="https://asm.ycmou.org.in/Home/About"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               className="text-sm hover:text-primary transition duration-300"
+                           >
+                               About ASM
+                           </a>
+                       </li>
+                       <li>
+                           <a
+                               href="https://ycmou.digitaluniversity.ac/"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               className="text-sm hover:text-primary transition duration-300"
+                           >
+                               YCMOU Digital University
+                           </a>
+                       </li>
                    </ul>
                  </div>
                    {/* College Links */}
                    <div>
-                       <h3 className="text-lg font-semibold mb-3 text-primary">College Links</h3>
+                       <h3 className="text-lg font-semibold mb-3 text-primary">University Links</h3>
                        <ul className="space-y-2">
-                           {footerCollegeLinks.map((link) => (
+                           {footerUniLinks.map((link) => (
                                <li key={link.href}>
                                    <Link
                                        href={link.href}
@@ -264,3 +282,4 @@ export default function RootLayout({
     </html>
   );
 }
+
