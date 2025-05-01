@@ -49,6 +49,13 @@ export default function RootLayout({
   const footerUniLinks = navLinks.slice(5, 8); // Assignments, Hall Ticket, Result
   const footerSiteLinks = navLinks.slice(8); // About, Contact
 
+    //College Link
+    const footerCollegeLinks = [
+        { href: "https://ycmou.ac.in/", label: "YCMOU", external: true },
+        { href: "https://asm.ycmou.org.in/Home/About", label: "About ASM", external: true },
+        { href: "https://ycmou.digitaluniversity.ac/", label: "Digital University", external: true },
+    ];
+
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen`}>
@@ -62,8 +69,8 @@ export default function RootLayout({
             <div className="container mx-auto px-4"> {/* Added horizontal padding */}
               <nav className="flex items-center justify-between">
                 {/* Adjusted left margin for desktop, removed ml-4 for mobile */}
-                <Link href="/" className="text-primary-foreground text-2xl font-bold transition duration-300 hover:opacity-80 md:ml-[10%]"> {/* Increased font size from xl to 2xl */}
-                  BCA YCMOU
+                <Link href="/" className="text-primary-foreground text-3xl font-bold transition duration-300 hover:opacity-80 md:ml-[10%]"> {/* Increased font size from xl to 2xl */}
+                  BCA
                 </Link>
                 {/* Desktop Navigation */}
                 <div className="hidden md:flex items-center space-x-6">
@@ -110,7 +117,7 @@ export default function RootLayout({
           {/* Updated Footer Structure */}
           <footer className="mt-auto py-8 bg-secondary text-secondary-foreground px-4">
              <div className="container mx-auto">
-               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+               <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
                  {/* Quick Links */}
                  <div>
                    <h3 className="text-lg font-semibold mb-3 text-primary">Quick Links</h3>
@@ -147,6 +154,24 @@ export default function RootLayout({
                      ))}
                    </ul>
                  </div>
+                   {/* College Links */}
+                   <div>
+                       <h3 className="text-lg font-semibold mb-3 text-primary">College Links</h3>
+                       <ul className="space-y-2">
+                           {footerCollegeLinks.map((link) => (
+                               <li key={link.href}>
+                                   <Link
+                                       href={link.href}
+                                       className="text-sm hover:text-primary transition duration-300"
+                                       target={link.external ? "_blank" : undefined}
+                                       rel={link.external ? "noopener noreferrer" : undefined}
+                                   >
+                                       {link.label}
+                                   </Link>
+                               </li>
+                           ))}
+                       </ul>
+                   </div>
                  {/* About Us */}
                  <div>
                    <h3 className="text-lg font-semibold mb-3 text-primary">About Us</h3>
@@ -239,5 +264,3 @@ export default function RootLayout({
     </html>
   );
 }
-
-    
