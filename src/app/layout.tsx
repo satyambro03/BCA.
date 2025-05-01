@@ -52,7 +52,7 @@ export default function RootLayout({
     const footerCollegeLinks = [
         { href: "https://ycmou.ac.in/", label: "YCMOU", external: true },
         { href: "https://asm.ycmou.org.in/Home/About", label: "About ASM", external: true },
-        { href: "https://ycmou.digitaluniversity.ac/", label: "Digital University", external: true },
+        
     ];
 
   return (
@@ -137,43 +137,6 @@ export default function RootLayout({
                  </div>
                  {/* University Links */}
                  <div>
-                   <h3 className="text-lg font-semibold mb-3 text-primary">College Links</h3>
-                   <ul className="space-y-2">
-                       {/* Direct College Links */}
-                       <li>
-                           <a
-                               href="https://ycmou.ac.in/"
-                               target="_blank"
-                               rel="noopener noreferrer"
-                               className="text-sm hover:text-primary transition duration-300"
-                           >
-                               YCMOU
-                           </a>
-                       </li>
-                       <li>
-                           <a
-                               href="https://asm.ycmou.org.in/Home/About"
-                               target="_blank"
-                               rel="noopener noreferrer"
-                               className="text-sm hover:text-primary transition duration-300"
-                           >
-                               About ASM
-                           </a>
-                       </li>
-                       <li>
-                           <a
-                               href="https://ycmou.digitaluniversity.ac/"
-                               target="_blank"
-                               rel="noopener noreferrer"
-                               className="text-sm hover:text-primary transition duration-300"
-                           >
-                               YCMOU Digital University
-                           </a>
-                       </li>
-                   </ul>
-                 </div>
-                   {/* College Links */}
-                   <div>
                        <h3 className="text-lg font-semibold mb-3 text-primary">University Links</h3>
                        <ul className="space-y-2">
                            {footerUniLinks.map((link) => (
@@ -188,6 +151,45 @@ export default function RootLayout({
                                    </Link>
                                </li>
                            ))}
+                           {/* Add YCMOU Digital University to University Links */}
+                           <li>
+                               <a
+                                   href="https://ycmou.digitaluniversity.ac/"
+                                   target="_blank"
+                                   rel="noopener noreferrer"
+                                   className="text-sm hover:text-primary transition duration-300"
+                               >
+                                   YCMOU Digital University
+                               </a>
+                           </li>
+                       </ul>
+                   </div>
+                   {/* College Links */}
+                   <div>
+                       <h3 className="text-lg font-semibold mb-3 text-primary">College Links</h3>
+                       <ul className="space-y-2">
+                           {/* Direct College Links */}
+                           <li>
+                               <a
+                                   href="https://ycmou.ac.in/"
+                                   target="_blank"
+                                   rel="noopener noreferrer"
+                                   className="text-sm hover:text-primary transition duration-300"
+                               >
+                                   YCMOU
+                               </a>
+                           </li>
+                           <li>
+                               <a
+                                   href="https://asm.ycmou.org.in/Home/About"
+                                   target="_blank"
+                                   rel="noopener noreferrer"
+                                   className="text-sm hover:text-primary transition duration-300"
+                               >
+                                   About ASM
+                               </a>
+                           </li>
+                           
                        </ul>
                    </div>
                  {/* About Us */}
