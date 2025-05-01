@@ -272,10 +272,10 @@ export default function RootLayout({
                 <ul className="space-y-2 mb-4">
                   <li>
                      <a href="mailto:satyambro333@gmail.com" className="flex items-center hover:text-primary transition duration-300">
-                       {/* Replace SVG with Image component */}
+                       {/* Replace SVG with Image component using the provided URL */}
                        <Image
-                         src="https://images.icon-icons.com/2642/PNG/512/google_mail_gmail_logo_icon_159346.png"
-                         alt="Gmail Icon"
+                         src="https://www.svgrepo.com/show/361773/email.svg"
+                         alt="Email Icon"
                          width={16} // Set appropriate width
                          height={16} // Set appropriate height
                          className="mr-2"
@@ -334,3 +334,4 @@ export default function RootLayout({
     </html>
   );
 }
+

@@ -23,8 +23,15 @@ const nextConfig: NextConfig = {
         port: '',
         pathname: '**',
       },
+      { // Added www.svgrepo.com
+        protocol: 'https',
+        hostname: 'www.svgrepo.com',
+        port: '',
+        pathname: '**',
+      },
     ],
   },
 };
 
 export default nextConfig;
+
