@@ -271,6 +271,7 @@ export default function RootLayout({
                 <h3 className="font-semibold mb-3 text-base text-primary">Contact</h3>
                 <ul className="space-y-2 mb-4">
                   <li>
+                     {/* Added hover transition effect */}
                      <a href="mailto:satyambro333@gmail.com" className="flex items-center hover:text-primary transition duration-300">
                        {/* Replace SVG with Image component using the provided URL */}
                        <Image
