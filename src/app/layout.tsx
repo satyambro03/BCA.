@@ -1,18 +1,17 @@
 
 import type { Metadata, Viewport } from 'next';
-import { GeistSans } from 'geist/font/sans';
 import Link from 'next/link';
-import Image from 'next/image'; // Import Image component
+import Image from 'next/image';
 import {
   Sheet,
   SheetContent,
   SheetTrigger,
   SheetHeader,
   SheetTitle,
-  SheetClose, // Added SheetClose
+  SheetClose,
 } from '@/components/ui/sheet';
 import { Button } from '@/components/ui/button';
-import { Menu, Phone, Mail, Instagram } from 'lucide-react'; // Import Phone and Mail icons
+import { Menu, Phone, Mail, Instagram } from 'lucide-react';
 import { ThemeProvider } from '@/components/theme-provider';
 import { ThemeToggle } from '@/components/theme-toggle';
 import { Toaster } from '@/components/ui/toaster';
@@ -21,8 +20,9 @@ import './globals.css';
 
 // Define Metadata
 export const metadata: Metadata = {
-  title: 'BCA',
-  description: 'resource for quality education materials.',
+  title: 'BCA Resource Hub',
+  description: 'Your ultimate resource for quality BCA education materials.',
+  keywords: ['BCA', 'YCMOU', 'Notes', 'Question Papers', 'Practicals', 'E-Books', 'Computer Applications'],
 };
 
 // Define Viewport
@@ -57,7 +57,7 @@ const footerLinks = {
     { href: 'https://www.bca-ycmou.com/books.html', label: 'E-Books', external: true },
   ],
   universityLinks: [
-    { href: 'https://ycmou.digitaluniversity.ac/', label: 'YCMOU Digital University', external: true },
+    { href: 'https://ycmou.digitaluniversity.ac/', label: 'YCMOU', external: true },
     { href: 'https://asm.ycmou.org.in/SiteContent/frmLanding', label: 'Home Assignments', external: true },
     { href: 'https://ycmou.digitaluniversity.ac/PreExamV2_DownloadHallTicket_New.aspx?ID=28070', label: 'Hall Ticket', external: true },
     { href: 'https://ycmou.digitaluniversity.ac/SearchDuplicateResult.aspx?ID=861', label: 'Result', external: true },
@@ -66,9 +66,7 @@ const footerLinks = {
     { href: '/about', label: 'About' },
     { href: '/contact', label: 'Contact' },
   ],
-  collegeLinks: [ // Added College Us section - Keeping array for potential future use
-     // Add college-related links here if available
-     // Example: { href: '/college-info', label: 'College Information' },
+  collegeLinks: [
   ]
 };
 
@@ -94,7 +92,6 @@ const socialLinks = [
       </svg>
     )
   },
-  // WhatsApp link moved to contact section
 ];
 
 // WhatsApp SVG component (can be defined here or imported)
@@ -113,8 +110,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
-          GeistSans.variable,
-          'antialiased flex flex-col min-h-screen' // Ensure footer sticks to bottom
+          'antialiased flex flex-col min-h-screen'
         )}
       >
         <ThemeProvider
@@ -124,21 +120,12 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <header className="bg-primary text-primary-foreground py-4 shadow-md sticky top-0 z-50">
-            <div className="container mx-auto px-4"> {/* Added horizontal padding */}
+            <div className="container mx-auto px-4">
               <nav className="flex items-center justify-between">
-                <Link href="/" className="text-primary-foreground text-2xl font-bold transition duration-300 hover:opacity-80 md:ml-[10%]"> {/* Increased font size */}
-                  BCA YCMOU
+                <Link href="/" className="text-primary-foreground text-3xl font-bold transition duration-300 hover:opacity-80 md:ml-[10%]">
+                  BCA
                 </Link>
 
-                 {/* Desktop Navigation (Hidden on Mobile) */}
-                 {/* Removed desktop nav links */}
-
-                <div className="hidden md:flex items-center space-x-4"> {/* Keep ThemeToggle visible on desktop */}
-                   <ThemeToggle />
-                </div>
-
-
-                {/* Mobile Navigation (Hamburger Menu) */}
                 <div className="md:hidden flex items-center">
                   <ThemeToggle />
                   <Sheet>
@@ -149,7 +136,6 @@ export default function RootLayout({
                       </Button>
                     </SheetTrigger>
                     <SheetContent side="right" className="w-[250px] sm:w-[300px] bg-background text-foreground p-4 flex flex-col">
-                      {/* Added explicit DialogTitle */}
                       <SheetHeader className="mb-4">
                         <SheetTitle className="text-left text-xl">Navigation</SheetTitle>
                       </SheetHeader>
@@ -173,10 +159,9 @@ export default function RootLayout({
               </nav>
             </div>
           </header>
-          <main className="flex-grow container mx-auto py-8 px-4 content-area">{children}</main> {/* Added horizontal padding and content-area */}
-          <footer className="mt-auto py-8 bg-secondary text-secondary-foreground px-4"> {/* Adjusted padding */}
-            <div className="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 text-sm"> {/* Grid layout */}
-              {/* Quick Links */}
+          <main className="flex-grow container mx-auto py-8 px-4 content-area">{children}</main>
+          <footer className="mt-auto py-8 bg-secondary text-secondary-foreground px-4">
+            <div className="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 text-sm">
               <div>
                 <h3 className="font-semibold mb-3 text-base text-primary">Quick Links</h3>
                 <ul className="space-y-2">
@@ -232,7 +217,6 @@ export default function RootLayout({
                     </li>
                   ))}
                 </ul>
-                 {/* Removed College Us Section */}
               </div>
 
               {/* Contact & Socials */}
@@ -242,7 +226,7 @@ export default function RootLayout({
                   <li>
                      {/* Added hover transition effect and Mail icon */}
                      <a href="mailto:satyambro333@gmail.com" className="flex items-center hover:text-primary transition duration-300">
-                       <Mail size={16} className="mr-2" />
+                      <Image src="https://www.svgrepo.com/show/361773/email.svg" alt="Email" width={16} height={16} className="mr-2 transition-colors duration-300 dark:invert" />
                        satyambro333@gmail.com
                      </a>
                   </li>
@@ -287,7 +271,7 @@ export default function RootLayout({
              {/* Copyright */}
             <div className="text-center mt-8 pt-4 border-t border-border">
               <p className="text-sm text-muted-foreground">
-                 &copy; {new Date().getFullYear()} BCA. All rights reserved.
+                 &copy; 2025 BCA. All rights reserved.
               </p>
             </div>
           </footer>
@@ -297,4 +281,3 @@ export default function RootLayout({
     </html>
   );
 }
-
