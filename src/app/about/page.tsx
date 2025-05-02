@@ -19,6 +19,7 @@ const AboutPage: React.FC = () => {
           <Image
             src="https://picsum.photos/800/300?random=1" // Placeholder image URL
             alt="Educational resources"
+            data-ai-hint="education books"
             width={800}
             height={300}
             className="rounded-lg shadow-lg"
@@ -29,7 +30,7 @@ const AboutPage: React.FC = () => {
       {/* Adjusted grid for better responsiveness */}
       <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-12">
         {/* Enhanced hover effect on cards */}
-        <Card className="text-center transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-xl hover:border-primary hover:shadow-primary/20 border">
+        <Card className="text-center card-hover-effect"> {/* Applied card-hover-effect */}
           <CardHeader>
             <div className="flex justify-center mb-4 text-primary">
               <BookOpenText className="h-10 w-10 md:h-12 md:w-12" /> {/* Responsive icon size */}
@@ -42,7 +43,7 @@ const AboutPage: React.FC = () => {
             </p>
           </CardContent>
         </Card>
-        <Card className="text-center transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-xl hover:border-primary hover:shadow-primary/20 border">
+        <Card className="text-center card-hover-effect"> {/* Applied card-hover-effect */}
           <CardHeader>
             <div className="flex justify-center mb-4 text-primary">
               <FileText className="h-10 w-10 md:h-12 md:w-12" /> {/* Responsive icon size */}
@@ -55,7 +56,7 @@ const AboutPage: React.FC = () => {
             </p>
           </CardContent>
         </Card>
-        <Card className="text-center transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-xl hover:border-primary hover:shadow-primary/20 border">
+        <Card className="text-center card-hover-effect"> {/* Applied card-hover-effect */}
           <CardHeader>
             <div className="flex justify-center mb-4 text-primary">
               <Lightbulb className="h-10 w-10 md:h-12 md:w-12" /> {/* Responsive icon size */}
@@ -68,7 +69,7 @@ const AboutPage: React.FC = () => {
             </p>
           </CardContent>
         </Card>
-        <Card className="text-center transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-xl hover:border-primary hover:shadow-primary/20 border">
+        <Card className="text-center card-hover-effect"> {/* Applied card-hover-effect */}
           <CardHeader>
             <div className="flex justify-center mb-4 text-primary">
               <Book className="h-10 w-10 md:h-12 md:w-12" /> {/* Responsive icon size */}
