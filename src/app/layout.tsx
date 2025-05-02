@@ -1,7 +1,6 @@
 
 import type { Metadata, Viewport } from 'next';
 import { GeistSans } from 'geist/font/sans';
-// Removed: import { GeistMono } from 'geist/font/mono';
 import Link from 'next/link';
 import Image from 'next/image'; // Import Image component
 import {
@@ -67,7 +66,7 @@ const footerLinks = {
     { href: '/about', label: 'About' },
     { href: '/contact', label: 'Contact' },
   ],
-  collegeLinks: [ // Added College Us section
+  collegeLinks: [ // Added College Us section - Keeping array for potential future use
      // Add college-related links here if available
      // Example: { href: '/college-info', label: 'College Information' },
   ]
@@ -115,7 +114,6 @@ export default function RootLayout({
       <body
         className={cn(
           GeistSans.variable,
-          // Removed: GeistMono.variable,
           'antialiased flex flex-col min-h-screen' // Ensure footer sticks to bottom
         )}
       >
@@ -133,7 +131,7 @@ export default function RootLayout({
                 </Link>
 
                  {/* Desktop Navigation (Hidden on Mobile) */}
-                 {/* Removed desktop nav links as requested */}
+                 {/* Removed desktop nav links */}
 
                 <div className="hidden md:flex items-center space-x-4"> {/* Keep ThemeToggle visible on desktop */}
                    <ThemeToggle />
@@ -202,30 +200,20 @@ export default function RootLayout({
                 <h3 className="font-semibold mb-3 text-base text-primary">University Links</h3>
                 <ul className="space-y-2">
                    {/* Moved YCMOU link here */}
-                   <li>
-                     <Link
-                       href="https://ycmou.digitaluniversity.ac/"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       className="hover:text-primary transition duration-300"
-                     >
-                       YCMOU Digital University
-                     </Link>
-                   </li>
-                  {footerLinks.universityLinks
-                   .filter(link => link.label !== 'YCMOU Digital University') // Filter out the duplicate if it exists
-                   .map((link) => (
-                    <li key={link.href}>
-                      <Link
-                        href={link.href}
-                        target={link.external ? '_blank' : undefined}
-                        rel={link.external ? 'noopener noreferrer' : undefined}
-                        className="hover:text-primary transition duration-300"
-                      >
-                        {link.label}
-                      </Link>
-                    </li>
-                  ))}
+                   {footerLinks.universityLinks
+                    .sort((a, b) => a.label === 'YCMOU Digital University' ? -1 : b.label === 'YCMOU Digital University' ? 1 : 0) // Ensure YCMOU is first
+                    .map((link) => (
+                     <li key={link.href}>
+                       <Link
+                         href={link.href}
+                         target="_blank"
+                         rel="noopener noreferrer"
+                         className="hover:text-primary transition duration-300"
+                       >
+                         {link.label}
+                       </Link>
+                     </li>
+                   ))}
                 </ul>
               </div>
 
@@ -244,26 +232,7 @@ export default function RootLayout({
                     </li>
                   ))}
                 </ul>
-                 {/* Added College Us Links */}
-                 <h3 className="font-semibold mt-4 mb-3 text-base text-primary">College Us</h3>
-                 <ul className="space-y-2">
-                   {footerLinks.collegeLinks.map((link) => (
-                     <li key={link.href}>
-                       <Link
-                         href={link.href}
-                         target={link.external ? '_blank' : undefined}
-                         rel={link.external ? 'noopener noreferrer' : undefined}
-                         className="hover:text-primary transition duration-300"
-                       >
-                         {link.label}
-                       </Link>
-                     </li>
-                   ))}
-                   {/* Add a placeholder if no links */}
-                   {footerLinks.collegeLinks.length === 0 && (
-                     <li><span className="text-muted-foreground">More links coming soon</span></li>
-                   )}
-                 </ul>
+                 {/* Removed College Us Section */}
               </div>
 
               {/* Contact & Socials */}
@@ -271,9 +240,8 @@ export default function RootLayout({
                 <h3 className="font-semibold mb-3 text-base text-primary">Contact</h3>
                 <ul className="space-y-2 mb-4">
                   <li>
-                     {/* Added hover transition effect */}
+                     {/* Added hover transition effect and Mail icon */}
                      <a href="mailto:satyambro333@gmail.com" className="flex items-center hover:text-primary transition duration-300">
-                       {/* Replaced Image component with lucide-react Mail icon */}
                        <Mail size={16} className="mr-2" />
                        satyambro333@gmail.com
                      </a>
