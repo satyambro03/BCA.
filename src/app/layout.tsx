@@ -123,7 +123,7 @@ export default function RootLayout({
             <div className="container mx-auto px-4">
               <nav className="flex items-center justify-between">
                 <Link href="/" className="text-primary-foreground text-3xl font-bold transition duration-300 hover:opacity-80 md:ml-[10%]">
-                  BCA YCMOU
+                  BCA
                 </Link>
 
                 <div className="md:hidden flex items-center">
@@ -159,7 +159,6 @@ export default function RootLayout({
               </nav>
             </div>
           </header>
-          {/* Removed fade-in-up from main as it will be handled per component */}
           <main className="flex-grow container mx-auto py-8 px-4 content-area">{children}</main>
           <footer className="mt-auto py-8 bg-secondary text-secondary-foreground px-4">
             <div className="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 text-sm">
