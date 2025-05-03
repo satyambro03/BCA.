@@ -4,7 +4,6 @@ import Link from 'next/link';
 import Image from 'next/image'; // Import next/image
 import {Card, CardContent, CardDescription, CardHeader, CardTitle} from '@/components/ui/card';
 import { BookOpen, FileText, FlaskConical, Info, Book, Mail, ClipboardCheck, Award, ClipboardList } from 'lucide-react'; // Added ClipboardList icon
-import ScrollAnimationWrapper from '@/components/scroll-animation-wrapper'; // Import the wrapper
 
 const HomePage: React.FC = () => {
   return (
@@ -14,8 +13,7 @@ const HomePage: React.FC = () => {
       {/* Features Section - Ensure responsive grid */}
       <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"> {/* Adjusted gaps and breakpoints */}
 
-        {/* Notes Section Card - Wrapped in Link and ScrollAnimationWrapper */}
-        <ScrollAnimationWrapper>
+        {/* Notes Section Card - Wrapped in Link */}
           <Link
             href="https://www.bca-ycmou.com/notes.html"
             className="block group h-full" // Added h-full for consistent height
@@ -35,10 +33,8 @@ const HomePage: React.FC = () => {
               </CardContent>
             </Card>
           </Link>
-        </ScrollAnimationWrapper>
 
-        {/* Question Papers Archive Card - Wrapped in Link and ScrollAnimationWrapper */}
-        <ScrollAnimationWrapper>
+        {/* Question Papers Archive Card - Wrapped in Link */}
           <Link
             href="https://www.bca-ycmou.com/question_papers.html"
             className="block group h-full"
@@ -58,10 +54,8 @@ const HomePage: React.FC = () => {
               </CardContent>
             </Card>
           </Link>
-        </ScrollAnimationWrapper>
 
-        {/* Practicals Section Card - Wrapped in Link and ScrollAnimationWrapper */}
-        <ScrollAnimationWrapper>
+        {/* Practicals Section Card - Wrapped in Link */}
            <Link
             href="https://www.bca-ycmou.com/practicals.html"
             className="block group h-full"
@@ -81,10 +75,8 @@ const HomePage: React.FC = () => {
               </CardContent>
             </Card>
           </Link>
-         </ScrollAnimationWrapper>
 
-        {/* E-Books Section Card - Wrapped in Link and ScrollAnimationWrapper */}
-        <ScrollAnimationWrapper>
+        {/* E-Books Section Card - Wrapped in Link */}
            <Link
             href="https://www.bca-ycmou.com/books.html"
             className="block group h-full"
@@ -104,10 +96,8 @@ const HomePage: React.FC = () => {
               </CardContent>
             </Card>
           </Link>
-         </ScrollAnimationWrapper>
 
-        {/* Home Assignments Section Card - Wrapped in Link and ScrollAnimationWrapper */}
-        <ScrollAnimationWrapper>
+        {/* Home Assignments Section Card - Wrapped in Link */}
           <Link
             href="https://asm.ycmou.org.in/SiteContent/frmLanding"
             className="block group h-full"
@@ -127,10 +117,8 @@ const HomePage: React.FC = () => {
               </CardContent>
             </Card>
           </Link>
-        </ScrollAnimationWrapper>
 
-        {/* Hall Ticket Section Card - Wrapped in Link and ScrollAnimationWrapper */}
-        <ScrollAnimationWrapper>
+        {/* Hall Ticket Section Card - Wrapped in Link */}
           <Link
             href="https://ycmou.digitaluniversity.ac/PreExamV2_DownloadHallTicket_New.aspx?ID=28070"
             className="block group h-full"
@@ -150,10 +138,8 @@ const HomePage: React.FC = () => {
               </CardContent>
             </Card>
           </Link>
-        </ScrollAnimationWrapper>
 
-        {/* Result Section Card - Wrapped in Link and ScrollAnimationWrapper */}
-        <ScrollAnimationWrapper>
+        {/* Result Section Card - Wrapped in Link */}
           <Link
             href="https://ycmou.digitaluniversity.ac/SearchDuplicateResult.aspx?ID=861"
             className="block group h-full"
@@ -173,10 +159,8 @@ const HomePage: React.FC = () => {
               </CardContent>
             </Card>
           </Link>
-        </ScrollAnimationWrapper>
 
-         {/* Contact Section Card - Wrapped in Link and ScrollAnimationWrapper */}
-         <ScrollAnimationWrapper>
+         {/* Contact Section Card - Wrapped in Link */}
            <Link href="/contact" className="block group h-full">
              <Card className="h-full card-hover-effect"> {/* Applied card-hover-effect */}
               <CardHeader>
@@ -191,11 +175,9 @@ const HomePage: React.FC = () => {
               </CardContent>
              </Card>
            </Link>
-         </ScrollAnimationWrapper>
 
 
-        {/* About Section Card - Wrapped in Link and ScrollAnimationWrapper */}
-        <ScrollAnimationWrapper>
+        {/* About Section Card - Wrapped in Link */}
           <Link href="/about" className="block group h-full">
             <Card className="h-full card-hover-effect col-span-1"> {/* Applied card-hover-effect */}
                <CardHeader>
@@ -210,7 +192,6 @@ const HomePage: React.FC = () => {
               </CardContent>
             </Card>
           </Link>
-        </ScrollAnimationWrapper>
 
       </section>
     </div>

@@ -3,17 +3,13 @@ import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { BookOpenText, FileText, Lightbulb, Book } from 'lucide-react';
 import Image from 'next/image'; // Import next/image
-import ScrollAnimationWrapper from '@/components/scroll-animation-wrapper'; // Import the wrapper
 
 const AboutPage: React.FC = () => {
   return (
     // Added content-area class for background styling and overflow-hidden
     <div className="container mx-auto py-12 px-4 content-area overflow-hidden">
-      <ScrollAnimationWrapper>
         <h1 className="text-2xl md:text-3xl font-bold mb-8 text-primary text-center">About BCA Resource Hub</h1> {/* Responsive heading */}
-      </ScrollAnimationWrapper>
 
-      <ScrollAnimationWrapper>
         <section className="mb-12">
           <p className="text-base md:text-lg text-center text-muted-foreground mb-8 max-w-4xl mx-auto"> {/* Responsive text, max-width */}
             Welcome to the BCA Resource Hub, your dedicated platform for accessing essential materials for the Bachelor of Computer Applications (BCA) program, particularly focusing on resources relevant to YCMOU (Yashwantrao Chavan Maharashtra Open University) students.
@@ -30,12 +26,10 @@ const AboutPage: React.FC = () => {
             />
           </div>
         </section>
-      </ScrollAnimationWrapper>
 
       {/* Adjusted grid for better responsiveness */}
       <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-12">
         {/* Enhanced hover effect on cards */}
-        <ScrollAnimationWrapper>
           <Card className="text-center card-hover-effect h-full"> {/* Applied card-hover-effect and h-full */}
             <CardHeader>
               <div className="flex justify-center mb-4 text-primary">
@@ -49,8 +43,6 @@ const AboutPage: React.FC = () => {
               </p>
             </CardContent>
           </Card>
-        </ScrollAnimationWrapper>
-        <ScrollAnimationWrapper>
           <Card className="text-center card-hover-effect h-full"> {/* Applied card-hover-effect and h-full */}
             <CardHeader>
               <div className="flex justify-center mb-4 text-primary">
@@ -64,8 +56,6 @@ const AboutPage: React.FC = () => {
               </p>
             </CardContent>
           </Card>
-        </ScrollAnimationWrapper>
-        <ScrollAnimationWrapper>
           <Card className="text-center card-hover-effect h-full"> {/* Applied card-hover-effect and h-full */}
             <CardHeader>
               <div className="flex justify-center mb-4 text-primary">
@@ -79,8 +69,6 @@ const AboutPage: React.FC = () => {
               </p>
             </CardContent>
           </Card>
-        </ScrollAnimationWrapper>
-        <ScrollAnimationWrapper>
           <Card className="text-center card-hover-effect h-full"> {/* Applied card-hover-effect and h-full */}
             <CardHeader>
               <div className="flex justify-center mb-4 text-primary">
@@ -94,17 +82,14 @@ const AboutPage: React.FC = () => {
               </p>
             </CardContent>
           </Card>
-        </ScrollAnimationWrapper>
       </section>
 
-      <ScrollAnimationWrapper>
         <section className="text-center">
           <h2 className="text-xl md:text-2xl font-semibold mb-4 text-secondary-foreground">Our Mission</h2> {/* Responsive heading */}
           <p className="text-sm md:text-base text-muted-foreground max-w-3xl mx-auto"> {/* Responsive text */}
             Our mission is to provide BCA students with easy access to high-quality educational resources. We aim to simplify the learning process by consolidating notes, question papers, practical materials, and e-books in one convenient location. This platform is created and maintained by Satyam Vishwakarma (S.R) with the goal of supporting fellow students in their academic journey.
           </p>
         </section>
-      </ScrollAnimationWrapper>
     </div>
   );
 };

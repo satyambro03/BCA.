@@ -20,7 +20,6 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { Send, Loader2 } from 'lucide-react'; // Use Loader2 for spinner
 import { submitContactForm } from '@/actions/contact';
 import { useToast } from '@/hooks/use-toast';
-import ScrollAnimationWrapper from '@/components/scroll-animation-wrapper'; // Import the wrapper
 
 const formSchema = z.object({
   name: z.string().min(2, { message: 'Name must be at least 2 characters.' }),
@@ -77,7 +76,6 @@ const ContactPage: React.FC = () => {
     // Added content-area class for background styling and overflow-hidden
     <div className="container mx-auto py-12 px-4 content-area overflow-hidden">
       {/* Make Card width responsive */}
-      <ScrollAnimationWrapper>
         <Card className="w-full max-w-2xl mx-auto">
           <CardHeader className="text-center">
             <CardTitle className="text-2xl md:text-3xl font-bold text-primary">Contact Us</CardTitle> {/* Responsive title */}
@@ -152,7 +150,6 @@ const ContactPage: React.FC = () => {
             </Form>
           </CardContent>
         </Card>
-      </ScrollAnimationWrapper>
     </div>
   );
 };
