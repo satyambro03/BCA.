@@ -13,7 +13,7 @@ import {
 import { Button } from '@/components/ui/button';
 import { Menu, Phone, Mail, Instagram } from 'lucide-react';
 import { ThemeProvider } from '@/components/theme-provider';
-import { ThemeToggle } from '@/components/theme-toggle';
+import { ThemeToggle } from '@/components/theme-toggle'; // Import ThemeToggle
 import { Toaster } from '@/components/ui/toaster';
 import { cn } from '@/lib/utils';
 import './globals.css';
@@ -110,7 +110,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
-          'antialiased flex flex-col min-h-screen'
+          'antialiased flex flex-col min-h-screen' // Removed geist fonts
         )}
       >
         <ThemeProvider
@@ -126,8 +126,28 @@ export default function RootLayout({
                   BCA
                 </Link>
 
+                {/* Desktop Navigation & Theme Toggle */}
+                <div className="hidden md:flex items-center space-x-6">
+                   <ul className="flex space-x-6">
+                    {navLinks.map((link) => (
+                        <li key={link.href}>
+                            <Link
+                                href={link.href}
+                                className="text-primary-foreground hover:opacity-80 transition duration-300 hover:scale-110 inline-block"
+                                target={link.external ? '_blank' : undefined}
+                                rel={link.external ? 'noopener noreferrer' : undefined}
+                            >
+                                {link.label}
+                            </Link>
+                        </li>
+                    ))}
+                  </ul>
+                   <ThemeToggle /> {/* Added ThemeToggle for desktop */}
+                </div>
+
+                {/* Mobile Navigation & Theme Toggle */}
                 <div className="md:hidden flex items-center">
-                  <ThemeToggle />
+                  <ThemeToggle /> {/* Moved ThemeToggle here for mobile */}
                   <Sheet>
                     <SheetTrigger asChild>
                       <Button variant="ghost" size="icon" className="ml-2 text-primary-foreground hover:bg-accent hover:text-accent-foreground">
@@ -138,6 +158,7 @@ export default function RootLayout({
                     <SheetContent side="right" className="w-[250px] sm:w-[300px] bg-background text-foreground p-4 flex flex-col">
                       <SheetHeader className="mb-4">
                         <SheetTitle className="text-left text-xl">Navigation</SheetTitle>
+                        {/* Removed DialogDescription as it's not needed and might cause errors */}
                       </SheetHeader>
                       <nav className="flex flex-col space-y-4 flex-grow">
                         {navLinks.map((link) => (
