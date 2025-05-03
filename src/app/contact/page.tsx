@@ -20,6 +20,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { Send, Loader2 } from 'lucide-react'; // Use Loader2 for spinner
 import { submitContactForm } from '@/actions/contact';
 import { useToast } from '@/hooks/use-toast';
+import ScrollAnimationWrapper from '@/components/scroll-animation-wrapper'; // Import the wrapper
 
 const formSchema = z.object({
   name: z.string().min(2, { message: 'Name must be at least 2 characters.' }),
@@ -73,83 +74,85 @@ const ContactPage: React.FC = () => {
   };
 
   return (
-    // Added content-area class for background styling
-    <div className="container mx-auto py-12 fade-in-up px-4 content-area">
+    // Added content-area class for background styling and overflow-hidden
+    <div className="container mx-auto py-12 px-4 content-area overflow-hidden">
       {/* Make Card width responsive */}
-      <Card className="w-full max-w-2xl mx-auto">
-        <CardHeader className="text-center">
-          <CardTitle className="text-2xl md:text-3xl font-bold text-primary">Contact Us</CardTitle> {/* Responsive title */}
-          <CardDescription className="text-sm md:text-base text-muted-foreground"> {/* Responsive description */}
-            Have questions or feedback? Fill out the form below and we'll get back to you.
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 md:space-y-6"> {/* Adjusted spacing */}
-              <FormField
-                control={form.control}
-                name="name"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Name</FormLabel>
-                    <FormControl>
-                      <Input placeholder="Your Name" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="email"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Email</FormLabel>
-                    <FormControl>
-                      <Input type="email" placeholder="your.email@example.com" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="subject"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Subject</FormLabel>
-                    <FormControl>
-                      <Input placeholder="Subject of your message" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="message"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Message</FormLabel>
-                    <FormControl>
-                      <Textarea placeholder="Your message..." rows={5} {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <Button type="submit" className="w-full" disabled={form.formState.isSubmitting}>
-                {form.formState.isSubmitting ? (
-                  <Loader2 className="mr-2 h-4 w-4 animate-spin" /> // Use Loader2 for spinner
-                ) : (
-                  <Send className="mr-2 h-4 w-4" />
-                )}
-                Send Message
-              </Button>
-            </form>
-          </Form>
-        </CardContent>
-      </Card>
+      <ScrollAnimationWrapper>
+        <Card className="w-full max-w-2xl mx-auto">
+          <CardHeader className="text-center">
+            <CardTitle className="text-2xl md:text-3xl font-bold text-primary">Contact Us</CardTitle> {/* Responsive title */}
+            <CardDescription className="text-sm md:text-base text-muted-foreground"> {/* Responsive description */}
+              Have questions or feedback? Fill out the form below and we'll get back to you.
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <Form {...form}>
+              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 md:space-y-6"> {/* Adjusted spacing */}
+                <FormField
+                  control={form.control}
+                  name="name"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Name</FormLabel>
+                      <FormControl>
+                        <Input placeholder="Your Name" {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="email"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Email</FormLabel>
+                      <FormControl>
+                        <Input type="email" placeholder="your.email@example.com" {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="subject"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Subject</FormLabel>
+                      <FormControl>
+                        <Input placeholder="Subject of your message" {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="message"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Message</FormLabel>
+                      <FormControl>
+                        <Textarea placeholder="Your message..." rows={5} {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <Button type="submit" className="w-full" disabled={form.formState.isSubmitting}>
+                  {form.formState.isSubmitting ? (
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" /> // Use Loader2 for spinner
+                  ) : (
+                    <Send className="mr-2 h-4 w-4" />
+                  )}
+                  Send Message
+                </Button>
+              </form>
+            </Form>
+          </CardContent>
+        </Card>
+      </ScrollAnimationWrapper>
     </div>
   );
 };

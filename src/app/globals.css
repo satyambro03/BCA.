@@ -132,21 +132,15 @@ body {
 
 }
 
-/* Add subtle page load animation */
-@layer utilities {
-  .fade-in-up {
-    animation: fadeInUp 0.6s ease-out forwards;
+/* Define the fadeInUp animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
-
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -154,5 +148,9 @@ body {
 @layer utilities {
   .card-hover-effect {
     @apply transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-xl hover:border-primary hover:shadow-primary/20 border;
+  }
+  /* Utility class to apply the animation */
+  .fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
   }
 }
