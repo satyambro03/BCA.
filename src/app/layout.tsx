@@ -1,4 +1,3 @@
-
 import type { Metadata, Viewport } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -11,9 +10,9 @@ import {
   SheetClose,
 } from '@/components/ui/sheet';
 import { Button } from '@/components/ui/button';
-import { Menu, Phone } from 'lucide-react'; // Removed Mail, Instagram imports as they are handled by inline SVGs or direct image links
+import { Menu, Phone } from 'lucide-react';
 import { ThemeProvider } from '@/components/theme-provider';
-import { ThemeToggle } from '@/components/theme-toggle'; // Import ThemeToggle
+import { ThemeToggle } from '@/components/theme-toggle';
 import { Toaster } from '@/components/ui/toaster';
 import { cn } from '@/lib/utils';
 import './globals.css';
@@ -74,7 +73,7 @@ const footerLinks = {
 const socialLinks = [
   { href: 'https://www.linkedin.com/in/satyam-vishwakarma-991438300/',
     label: 'LinkedIn',
-    icon: () => ( // Use inline SVG for the LinkedIn logo
+    icon: () => (
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
             <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
         </svg>
@@ -82,14 +81,14 @@ const socialLinks = [
   },
   { href: 'https://www.instagram.com/satyam_vishwakarma_18',
     label: 'Instagram',
-    icon: () => ( // Using lucide-react Instagram icon, ensure it's imported or handle appropriately
+    icon: () => (
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-instagram"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
     )
   },
   {
     href: 'https://x.com/satyambro333',
     label: 'X (formerly Twitter)',
-    icon: () => ( // Use inline SVG for the X logo
+    icon: () => (
       <svg viewBox="0 0 24 24" aria-hidden="true" width="24" height="24" fill="currentColor">
         <g>
           <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
@@ -127,19 +126,18 @@ export default function RootLayout({
           <header className="bg-primary text-primary-foreground py-4 shadow-md sticky top-0 z-50">
             <div className="container mx-auto px-4">
               <nav className="flex items-center justify-between">
-                <Link href="/" className="text-primary-foreground text-3xl font-bold transition duration-300 hover:opacity-80 md:ml-[10%]">
+                <Link href="/" className="text-primary-foreground text-3xl font-bold transition duration-300 hover:opacity-80">
                   BCA
                 </Link>
 
-                {/* Desktop Navigation & Theme Toggle */}
-                <div className="hidden md:flex items-center space-x-6">
-                   {/* Desktop navigation links removed as per user request */}
-                   <ThemeToggle /> {/* Added ThemeToggle for desktop */}
+                {/* Desktop Theme Toggle */}
+                <div className="hidden md:flex items-center">
+                   <ThemeToggle />
                 </div>
 
                 {/* Mobile Navigation & Theme Toggle */}
                 <div className="md:hidden flex items-center">
-                  <ThemeToggle /> {/* Moved ThemeToggle here for mobile */}
+                  <ThemeToggle />
                   <Sheet>
                     <SheetTrigger asChild>
                       <Button variant="ghost" size="icon" className="ml-2 text-primary-foreground hover:bg-accent hover:text-accent-foreground">
@@ -197,7 +195,7 @@ export default function RootLayout({
                 <h3 className="font-semibold mb-3 text-base text-primary">University Links</h3>
                 <ul className="space-y-2">
                    {footerLinks.universityLinks
-                    .sort((a, b) => a.label === 'YCMOU' ? -1 : b.label === 'YCMOU' ? 1 : 0) 
+                    .sort((a, b) => a.label === 'YCMOU' ? -1 : b.label === 'YCMOU' ? 1 : 0)
                     .map((link) => (
                      <li key={link.href}>
                        <Link
