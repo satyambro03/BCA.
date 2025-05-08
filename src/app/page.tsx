@@ -7,8 +7,9 @@ import { BookOpen, FileText, FlaskConical, Info, Book, Mail, ClipboardCheck, Awa
 
 const HomePage: React.FC = () => {
   return (
-    // Added content-area class for background styling
-    <div className="container mx-auto py-12 px-4 content-area overflow-hidden"> {/* Added overflow-hidden to contain animations */}
+    // Removed container, mx-auto, px-4, py-12, content-area. Main layout handles container and base padding.
+    // Kept overflow-hidden for animations.
+    <div className="overflow-hidden">
 
       {/* Features Section - Ensure responsive grid */}
       <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"> {/* Adjusted gaps and breakpoints */}

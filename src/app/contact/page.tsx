@@ -73,8 +73,9 @@ const ContactPage: React.FC = () => {
   };
 
   return (
-    // Added content-area class for background styling and overflow-hidden
-    <div className="container mx-auto py-12 px-4 content-area overflow-hidden">
+    // Removed container, mx-auto, px-4, py-12, content-area. Main layout handles container and base padding.
+    // Kept overflow-hidden for potential future animations or general neatness.
+    <div className="overflow-hidden">
       {/* Make Card width responsive */}
         <Card className="w-full max-w-2xl mx-auto">
           <CardHeader className="text-center">

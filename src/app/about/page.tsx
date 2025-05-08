@@ -6,8 +6,9 @@ import Image from 'next/image'; // Import next/image
 
 const AboutPage: React.FC = () => {
   return (
-    // Added content-area class for background styling and overflow-hidden
-    <div className="container mx-auto py-12 px-4 content-area overflow-hidden">
+    // Removed container, mx-auto, px-4, py-12, content-area. Main layout handles container and base padding.
+    // Kept overflow-hidden for animations or general neatness.
+    <div className="overflow-hidden">
         <h1 className="text-2xl md:text-3xl font-bold mb-8 text-primary text-center">About BCA Resource Hub</h1> {/* Responsive heading */}
 
         <section className="mb-12">
