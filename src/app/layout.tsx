@@ -11,7 +11,7 @@ import {
   SheetClose,
 } from '@/components/ui/sheet';
 import { Button } from '@/components/ui/button';
-import { Menu, Phone, Mail, Instagram } from 'lucide-react';
+import { Menu, Phone } from 'lucide-react'; // Removed Mail, Instagram imports as they are handled by inline SVGs or direct image links
 import { ThemeProvider } from '@/components/theme-provider';
 import { ThemeToggle } from '@/components/theme-toggle'; // Import ThemeToggle
 import { Toaster } from '@/components/ui/toaster';
@@ -80,7 +80,12 @@ const socialLinks = [
         </svg>
     )
   },
-  { href: 'https://www.instagram.com/satyam_vishwakarma_18', label: 'Instagram', icon: Instagram },
+  { href: 'https://www.instagram.com/satyam_vishwakarma_18',
+    label: 'Instagram',
+    icon: () => ( // Using lucide-react Instagram icon, ensure it's imported or handle appropriately
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-instagram"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
+    )
+  },
   {
     href: 'https://x.com/satyambro333',
     label: 'X (formerly Twitter)',
@@ -94,7 +99,7 @@ const socialLinks = [
   },
 ];
 
-// WhatsApp SVG component (can be defined here or imported)
+// WhatsApp SVG component
 const WhatsAppIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
     <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.894 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
@@ -110,7 +115,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
-          'antialiased flex flex-col min-h-screen' // Removed geist fonts
+          'antialiased flex flex-col min-h-screen'
         )}
       >
         <ThemeProvider
@@ -128,20 +133,7 @@ export default function RootLayout({
 
                 {/* Desktop Navigation & Theme Toggle */}
                 <div className="hidden md:flex items-center space-x-6">
-                   <ul className="flex space-x-6">
-                    {navLinks.map((link) => (
-                        <li key={link.href}>
-                            <Link
-                                href={link.href}
-                                className="text-primary-foreground hover:opacity-80 transition duration-300 hover:scale-110 inline-block"
-                                target={link.external ? '_blank' : undefined}
-                                rel={link.external ? 'noopener noreferrer' : undefined}
-                            >
-                                {link.label}
-                            </Link>
-                        </li>
-                    ))}
-                  </ul>
+                   {/* Desktop navigation links removed as per user request */}
                    <ThemeToggle /> {/* Added ThemeToggle for desktop */}
                 </div>
 
@@ -158,7 +150,6 @@ export default function RootLayout({
                     <SheetContent side="right" className="w-[250px] sm:w-[300px] bg-background text-foreground p-4 flex flex-col">
                       <SheetHeader className="mb-4">
                         <SheetTitle className="text-left text-xl">Navigation</SheetTitle>
-                        {/* Removed DialogDescription as it's not needed and might cause errors */}
                       </SheetHeader>
                       <nav className="flex flex-col space-y-4 flex-grow">
                         {navLinks.map((link) => (
@@ -205,9 +196,8 @@ export default function RootLayout({
               <div>
                 <h3 className="font-semibold mb-3 text-base text-primary">University Links</h3>
                 <ul className="space-y-2">
-                   {/* Moved YCMOU link here */}
                    {footerLinks.universityLinks
-                    .sort((a, b) => a.label === 'YCMOU' ? -1 : b.label === 'YCMOU' ? 1 : 0) // Ensure YCMOU is first
+                    .sort((a, b) => a.label === 'YCMOU' ? -1 : b.label === 'YCMOU' ? 1 : 0) 
                     .map((link) => (
                      <li key={link.href}>
                        <Link
@@ -245,7 +235,6 @@ export default function RootLayout({
                 <h3 className="font-semibold mb-3 text-base text-primary">Contact</h3>
                 <ul className="space-y-2 mb-4">
                   <li>
-                     {/* Added hover transition effect and Mail icon */}
                      <a href="mailto:satyambro333@gmail.com" className="flex items-center hover:text-primary transition duration-300">
                       <Image src="https://www.svgrepo.com/show/361773/email.svg" alt="Email" width={16} height={16} className="mr-2 transition-colors duration-300 dark:invert" />
                        satyambro333@gmail.com
@@ -257,7 +246,6 @@ export default function RootLayout({
                       +91 7039201803
                     </a>
                   </li>
-                  {/* Added WhatsApp contact link */}
                   <li>
                      <a
                        href="https://wa.me/917039201803"
@@ -282,14 +270,12 @@ export default function RootLayout({
                       className="text-secondary-foreground hover:text-primary transition duration-300"
                     >
                       <link.icon />
-                      {/* Removed text display from social icons */}
                     </a>
                   ))}
                 </div>
               </div>
             </div>
 
-             {/* Copyright */}
             <div className="text-center mt-8 pt-4 border-t border-border">
               <p className="text-sm text-muted-foreground">
                  &copy; 2025 BCA. All rights reserved.
