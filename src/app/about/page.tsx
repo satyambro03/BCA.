@@ -31,7 +31,7 @@ const AboutPage: React.FC = () => {
       {/* Adjusted grid for better responsiveness */}
       <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-12">
         {/* Enhanced hover effect on cards */}
-          <Card className="text-center h-full"> {/* Removed card-hover-effect and applied h-full */}
+          <Card className="text-center h-full card-hover-effect"> {/* Applied card-hover-effect and h-full */}
             <CardHeader>
               <div className="flex justify-center mb-4 text-primary">
                 <BookOpenText className="h-10 w-10 md:h-12 md:w-12" /> {/* Responsive icon size */}
@@ -44,7 +44,7 @@ const AboutPage: React.FC = () => {
               </p>
             </CardContent>
           </Card>
-          <Card className="text-center h-full"> {/* Removed card-hover-effect and applied h-full */}
+          <Card className="text-center h-full card-hover-effect"> {/* Applied card-hover-effect and h-full */}
             <CardHeader>
               <div className="flex justify-center mb-4 text-primary">
                 <FileText className="h-10 w-10 md:h-12 md:w-12" /> {/* Responsive icon size */}
@@ -57,7 +57,7 @@ const AboutPage: React.FC = () => {
               </p>
             </CardContent>
           </Card>
-          <Card className="text-center h-full"> {/* Removed card-hover-effect and applied h-full */}
+          <Card className="text-center h-full card-hover-effect"> {/* Applied card-hover-effect and h-full */}
             <CardHeader>
               <div className="flex justify-center mb-4 text-primary">
                 <Lightbulb className="h-10 w-10 md:h-12 md:w-12" /> {/* Responsive icon size */}
@@ -70,7 +70,7 @@ const AboutPage: React.FC = () => {
               </p>
             </CardContent>
           </Card>
-          <Card className="text-center h-full"> {/* Removed card-hover-effect and applied h-full */}
+          <Card className="text-center h-full card-hover-effect"> {/* Applied card-hover-effect and h-full */}
             <CardHeader>
               <div className="flex justify-center mb-4 text-primary">
                 <Book className="h-10 w-10 md:h-12 md:w-12" /> {/* Responsive icon size */}
