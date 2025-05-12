@@ -147,7 +147,9 @@ body {
 /* Add subtle hover animation for cards */
 @layer utilities {
   .card-hover-effect {
-    @apply transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-xl hover:border-primary hover:shadow-primary/20 border;
+    @apply transition-all duration-300 ease-in-out border; /* Base styles */
+    @apply hover:scale-105 hover:shadow-xl hover:border-primary hover:shadow-primary/20; /* Hover styles */
+    @apply active:scale-95 active:shadow-lg active:border-primary/80 active:shadow-primary/10; /* Active (click) styles */
   }
   /* Utility class to apply the animation */
   .fade-in-up {
