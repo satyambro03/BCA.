@@ -8,8 +8,8 @@ import { BookOpen, FileText, FlaskConical, Info, Book, Mail, ClipboardCheck, Awa
 const HomePage: React.FC = () => {
   return (
     // Removed container, mx-auto, px-4, py-12, content-area. Main layout handles container and base padding.
-    // Kept overflow-hidden for animations.
-    <div className="overflow-hidden">
+    // Kept overflow-hidden for animations. Applied fade-in-up animation.
+    <div className="overflow-hidden fade-in-up">
 
       {/* Features Section - Ensure responsive grid */}
       <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"> {/* Adjusted gaps and breakpoints */}
@@ -21,7 +21,7 @@ const HomePage: React.FC = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Card className="h-full card-hover-effect"> {/* Applied card-hover-effect */}
+            <Card className="h-full"> {/* Removed card-hover-effect */}
               <CardHeader>
                 <div className="flex items-center justify-center mb-2 text-primary">
                     <BookOpen size={32} />
@@ -42,7 +42,7 @@ const HomePage: React.FC = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Card className="h-full card-hover-effect"> {/* Applied card-hover-effect */}
+            <Card className="h-full"> {/* Removed card-hover-effect */}
               <CardHeader>
                  <div className="flex items-center justify-center mb-2 text-primary">
                     <FileText size={32} />
@@ -63,7 +63,7 @@ const HomePage: React.FC = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Card className="h-full card-hover-effect"> {/* Applied card-hover-effect */}
+            <Card className="h-full"> {/* Removed card-hover-effect */}
               <CardHeader>
                  <div className="flex items-center justify-center mb-2 text-primary">
                     <FlaskConical size={32} />
@@ -84,7 +84,7 @@ const HomePage: React.FC = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Card className="h-full card-hover-effect"> {/* Applied card-hover-effect */}
+            <Card className="h-full"> {/* Removed card-hover-effect */}
               <CardHeader>
                 <div className="flex items-center justify-center mb-2 text-primary">
                   <Book size={32} />
@@ -105,7 +105,7 @@ const HomePage: React.FC = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Card className="h-full card-hover-effect"> {/* Applied card-hover-effect */}
+            <Card className="h-full"> {/* Removed card-hover-effect */}
               <CardHeader>
                 <div className="flex items-center justify-center mb-2 text-primary">
                   <ClipboardCheck size={32} />
@@ -126,7 +126,7 @@ const HomePage: React.FC = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Card className="h-full card-hover-effect"> {/* Applied card-hover-effect */}
+            <Card className="h-full"> {/* Removed card-hover-effect */}
               <CardHeader>
                 <div className="flex items-center justify-center mb-2 text-primary">
                   <ClipboardList size={32} /> {/* Using ClipboardList icon for Hall Ticket */}
@@ -147,7 +147,7 @@ const HomePage: React.FC = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Card className="h-full card-hover-effect"> {/* Applied card-hover-effect */}
+            <Card className="h-full"> {/* Removed card-hover-effect */}
               <CardHeader>
                 <div className="flex items-center justify-center mb-2 text-primary">
                   <Award size={32} /> {/* Using Award icon for Result */}
@@ -163,7 +163,7 @@ const HomePage: React.FC = () => {
 
          {/* Contact Section Card - Wrapped in Link */}
            <Link href="/contact" className="block group h-full">
-             <Card className="h-full card-hover-effect"> {/* Applied card-hover-effect */}
+             <Card className="h-full"> {/* Removed card-hover-effect */}
               <CardHeader>
                 <div className="flex items-center justify-center mb-2 text-primary">
                   <Mail size={32} />
@@ -180,7 +180,7 @@ const HomePage: React.FC = () => {
 
         {/* About Section Card - Wrapped in Link */}
           <Link href="/about" className="block group h-full">
-            <Card className="h-full card-hover-effect col-span-1"> {/* Applied card-hover-effect */}
+            <Card className="h-full col-span-1"> {/* Removed card-hover-effect */}
                <CardHeader>
                  <div className="flex items-center justify-center mb-2 text-primary">
                     <Info size={32} />
