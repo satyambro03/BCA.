@@ -147,16 +147,13 @@ body {
 /* Add subtle hover animation for cards */
 @layer utilities {
   .card-hover-effect {
-    /* Base Card component already applies 'border', 'rounded-lg', 'shadow-sm' */
-    /* Transition for border color and width changes */
-    @apply transition-all duration-200 ease-out; 
-    
-    /* On hover, change border to 2px primary (blue) */
-    @apply hover:border-primary hover:border-2;
-    
-    /* On active (click), also change border to 2px primary (blue) */
-    @apply active:border-primary active:border-2;
-    /* Removed scaling and complex shadows to focus on the border animation */
+    /* Transition for border color changes */
+    @apply transition-colors duration-200 ease-out;
+    /* On hover, change border color to primary */
+    @apply hover:border-primary;
+    /* On active (click), also change border color to primary */
+    @apply active:border-primary;
+    /* Removed scaling and border width changes to prevent "movement" */
   }
   /* Utility class to apply the animation */
   .fade-in-up {
