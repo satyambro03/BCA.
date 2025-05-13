@@ -147,13 +147,11 @@ body {
 /* Add subtle hover animation for cards */
 @layer utilities {
   .card-hover-effect {
-    /* Transition for border color changes */
-    @apply transition-colors duration-200 ease-out;
-    /* On hover, change border color to primary */
-    @apply hover:border-primary;
-    /* On active (click), also change border color to primary */
-    @apply active:border-primary;
-    /* Removed scaling and border width changes to prevent "movement" */
+    @apply transition-all duration-300 ease-out; /* Transition for border and shadow */
+    /* On hover, change border color to primary and add a blue shadow */
+    @apply hover:border-primary hover:shadow-[0_0_20px_3px_hsla(var(--primary),0.6)];
+    /* On active (click), also change border and shadow */
+    @apply active:border-primary active:shadow-[0_0_25px_5px_hsla(var(--primary),0.7)];
   }
   /* Utility class to apply the animation */
   .fade-in-up {
